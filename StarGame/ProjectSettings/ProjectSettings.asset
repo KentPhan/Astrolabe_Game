@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: 59ad8be26340e8041b7dcc8d6dc2cb86
+  productGUID: 1ddcb4ba78716724d9d52260c4510d0d
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: ConstellationGame
+  productName: StarGame
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -125,6 +125,7 @@ PlayerSettings:
   m_HolographicPauseOnTrackingLoss: 1
   xboxOneDisableKinectGpuReservation: 0
   xboxOneEnable7thCore: 0
+  isWsaHolographicRemotingEnabled: 0
   vrSettings:
     cardboard:
       depthFormat: 0
@@ -648,8 +649,8 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: e580c128-6ba7-4628-a35c-74787d0037d5
-  projectName: ConstellationGame
+  cloudProjectId: 9df4a178-2d5f-4b55-99b9-e96a2a7fe051
+  projectName: StarGame
   organizationId: kent-1946485
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0

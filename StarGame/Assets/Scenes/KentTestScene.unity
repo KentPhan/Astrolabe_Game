@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 7e1e5781d39549148abcbf66c428df00, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 96a55d6dc1124aa4b8effcb91b706ca1, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22258085, g: 0.2503707, b: 0.32269225, a: 1}
+  m_IndirectSpecularColor: {r: 0.13788635, g: 0.14992857, b: 0.19488293, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -160,12 +160,12 @@ Prefab:
     - target: {fileID: 114745645300330102, guid: b3a415fb9d3540546892d69bb238b629,
         type: 2}
       propertyPath: control
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114745645300330102, guid: b3a415fb9d3540546892d69bb238b629,
         type: 2}
       propertyPath: wantedMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4445919128522126, guid: b3a415fb9d3540546892d69bb238b629, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z

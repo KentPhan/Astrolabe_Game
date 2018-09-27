@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 96a55d6dc1124aa4b8effcb91b706ca1, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.13636044, g: 0.15055937, b: 0.19480205, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -256,6 +256,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &1604975836
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4060593060129758, guid: 41615b637ed8a5c4c92746004883340a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 517.0815
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060593060129758, guid: 41615b637ed8a5c4c92746004883340a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 602.53796
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060593060129758, guid: 41615b637ed8a5c4c92746004883340a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060593060129758, guid: 41615b637ed8a5c4c92746004883340a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060593060129758, guid: 41615b637ed8a5c4c92746004883340a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060593060129758, guid: 41615b637ed8a5c4c92746004883340a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060593060129758, guid: 41615b637ed8a5c4c92746004883340a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060593060129758, guid: 41615b637ed8a5c4c92746004883340a, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 41615b637ed8a5c4c92746004883340a, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &1689394713
 Prefab:
   m_ObjectHideFlags: 0
@@ -393,6 +435,36 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114852042880624218, guid: ad6a0410e9792d94c8f0e203e7fd8a8b,
+        type: 2}
+      propertyPath: constellationObjectPool
+      value: 
+      objectReference: {fileID: 1820807632}
+    - target: {fileID: 224856848367824746, guid: ad6a0410e9792d94c8f0e203e7fd8a8b,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224856848367824746, guid: ad6a0410e9792d94c8f0e203e7fd8a8b,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224856848367824746, guid: ad6a0410e9792d94c8f0e203e7fd8a8b,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224792568629612640, guid: ad6a0410e9792d94c8f0e203e7fd8a8b,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224792568629612640, guid: ad6a0410e9792d94c8f0e203e7fd8a8b,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad6a0410e9792d94c8f0e203e7fd8a8b, type: 2}
   m_IsPrefabAsset: 0
@@ -443,3 +515,9 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3a415fb9d3540546892d69bb238b629, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1820807632 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114360426113811866, guid: 41615b637ed8a5c4c92746004883340a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1604975836}
+  m_Script: {fileID: 11500000, guid: e911931f96672b14d9ea7f9e8785953a, type: 3}

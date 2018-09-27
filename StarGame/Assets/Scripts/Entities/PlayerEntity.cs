@@ -43,10 +43,6 @@ public class PlayerEntity : Entity
         m_Gyro.enabled = true;
     }
 
-    void OnGUI()
-    {
-
-    }
 
     void Update()
     {
@@ -87,7 +83,13 @@ public class PlayerEntity : Entity
             //Quaternion xQuaternion = Quaternion.AngleAxis(rotationX, Vector3.up);
             //Quaternion yQuaternion = Quaternion.AngleAxis(-rotationY, Vector3.right);
             //transform.localRotation = originalRotation * xQuaternion * yQuaternion;
-            transform.Rotate(-Input.gyro.rotationRateUnbiased.x, -Input.gyro.rotationRateUnbiased.y, 0);
+            //transform.Rotate(-Input.gyro.attitude.x, -Input.gyro.attitude.y, 0);
+            //Quaternion temporary = Input.gyro.rotationRateUnbiased;
+
+            //transform.rotation = temporary;
+            transform.rotation = m_Gyro.attitude /** Quaternion.AngleAxis(90, Vector3.forward)*/;
+
+
         }
 
     }

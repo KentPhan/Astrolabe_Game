@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Player Entity
@@ -32,6 +33,8 @@ public class PlayerEntity : Entity
 
     //Gyroscope
     private Gyroscope m_Gyro;
+
+    public Text debugPrint;
 
     void Start()
     {
@@ -76,20 +79,11 @@ public class PlayerEntity : Entity
         }
         else
         {
-            //rotationX += Input.gyro.rotationRateUnbiased.x * sensitivityX;
-            //rotationY += Input.gyro.rotationRateUnbiased.y * sensitivityY;
-            //rotationX = ClampAngle(rotationX, minimumX, maximumX);
-            //rotationY = ClampAngle(rotationY, minimumY, maximumY);
-            //Quaternion xQuaternion = Quaternion.AngleAxis(rotationX, Vector3.up);
-            //Quaternion yQuaternion = Quaternion.AngleAxis(-rotationY, Vector3.right);
-            //transform.localRotation = originalRotation * xQuaternion * yQuaternion;
-            //transform.Rotate(-Input.gyro.attitude.x, -Input.gyro.attitude.y, 0);
-            //Quaternion temporary = Input.gyro.rotationRateUnbiased;
-
-            //transform.rotation = temporary;
-            transform.rotation = m_Gyro.attitude /** Quaternion.AngleAxis(90, Vector3.forward)*/;
-
-
+            //Why the fuck does this work. I have no idea.
+            Quaternion gyroRotFix = new Quaternion(-0.5f, 0.5f, 0.5f, 0.5f);
+            Quaternion gyroRot = gyroRotFix * Input.gyro.attitude;
+            gyroRot = new Quaternion(gyroRot.x, gyroRot.y, -gyroRot.z, -gyroRot.w);
+            transform.rotation = gyroRot;
         }
 
     }

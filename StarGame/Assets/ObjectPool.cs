@@ -57,6 +57,7 @@ public class ObjectPool : MonoBehaviour
         else
         {
             Debug.LogWarning(toReturn.name + " was returned to a pool it wasn't spawned from! Destroying.");
+            toReturn.transform.SetParent(transform);
             Destroy(toReturn);
         }
     }

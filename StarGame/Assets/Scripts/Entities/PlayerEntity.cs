@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 /// <summary>
 /// Player Entity
@@ -33,8 +32,6 @@ public class PlayerEntity : Entity
 
     //Gyroscope
     private Gyroscope m_Gyro;
-
-    public Text debugPrint;
 
     void Start()
     {

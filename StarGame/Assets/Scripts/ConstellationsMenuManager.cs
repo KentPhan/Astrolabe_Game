@@ -3,21 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[System.Serializable]
-public class ConstellationItem
-{
-    public string name;
-    public Sprite icon;
-    public Sprite image;
-    public int collectable = 0;
-}
 
 public class ConstellationsMenuManager : MonoBehaviour
 {
     public Button CloseButton;
     public CanvasManager canvasManager;
     // Use this for initialization
-    public List<ConstellationItem> constellationItemList;
+    public ConstellationManager contellationManager;
     public Transform contentPanel;
     public ObjectPool constellationObjectPool;
     void CloseMenu()
@@ -56,10 +48,10 @@ public class ConstellationsMenuManager : MonoBehaviour
 
     private void AddButtons()
     {
-        for (int i = 0; i < constellationItemList.Count; i++)
+        for (int i = 0; i < contellationManager.constellationItemList.Count; i++)
         {
             Debug.Log(i);
-            ConstellationItem item = constellationItemList[i];
+            ConstellationItem item = contellationManager.constellationItemList[i];
             GameObject newButton = constellationObjectPool.GetObject();
             newButton.transform.SetParent(contentPanel, false);
 

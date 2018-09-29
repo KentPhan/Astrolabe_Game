@@ -20,6 +20,7 @@ public class ConstellationsMenuManager : MonoBehaviour
 
     public void activateConstellation(ConstellationItem currentItem)
     {
+        Debug.Log("Click Button");
         canvasManager.setMenuStatus(false);
         canvasManager.setConstellationItem(currentItem);
     }
@@ -38,7 +39,6 @@ public class ConstellationsMenuManager : MonoBehaviour
 
     private void RemoveButtons()
     {
-        Debug.Log("CHild" + contentPanel.childCount);
         while (contentPanel.childCount > 0)
         {
             GameObject toRemove = contentPanel.GetChild(0).gameObject;

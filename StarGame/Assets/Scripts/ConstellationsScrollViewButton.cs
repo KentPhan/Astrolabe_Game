@@ -28,7 +28,6 @@ public class ConstellationsScrollViewButton : MonoBehaviour {
     public void Setup(ConstellationItem currentItem,
         ConstellationsMenuManager _menuManager)
     {
-        Debug.Log(currentItem.name);
         source = currentItem;
         menuManager = _menuManager;
         descriptionLabel.text = source.name;

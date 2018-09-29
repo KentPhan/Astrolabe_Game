@@ -19,9 +19,12 @@ public class ConstellationManager : MonoBehaviour {
                     new Vector3(0, 0, 0), 
                     Quaternion.Euler(constellationItemList[i].rotation));
             constellationItemList[i].displayInMap.transform.parent = transform;
-            constellationItemList[i].displayInMap.name = constellationItemList[i].name;
+            constellationItemList[i].displayInMap.name = 
+                constellationItemList[i].name;
             // set display material
-            //constellationItemList[i].displayInMap.
+            constellationItemList[i].displayInMap.transform.
+                GetComponentInChildren<Renderer>().material = 
+                    constellationItemList[i].displayMaterial;
         }
         
     }

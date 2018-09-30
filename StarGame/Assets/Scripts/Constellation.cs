@@ -10,7 +10,7 @@ public class ConstellationItem
 {
     public string name;
     public int collectable = 0;
-    public Vector3 rotation;
+    public Vector3 eulerAngles;
     public Sprite icon;
     public Material matchMaterial;
     public Material displayMaterial;

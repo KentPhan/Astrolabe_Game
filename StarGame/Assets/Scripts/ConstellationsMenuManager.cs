@@ -18,11 +18,11 @@ public class ConstellationsMenuManager : MonoBehaviour
         canvasManager.setMenuStatus(false);
     }
 
-    public void activateConstellation(ConstellationItem currentItem)
+    public void activateConstellationMatch(int idInCostellationItemList)
     {
         Debug.Log("Click Button");
         canvasManager.setMenuStatus(false);
-        canvasManager.setConstellationItem(currentItem);
+        canvasManager.setConstellationMatch(idInCostellationItemList);
     }
 
     void Start()
@@ -31,7 +31,7 @@ public class ConstellationsMenuManager : MonoBehaviour
         RefreshDisplay();
     }
 
-    void RefreshDisplay()
+    public void RefreshDisplay()
     {
         RemoveButtons();
         AddButtons();
@@ -46,18 +46,35 @@ public class ConstellationsMenuManager : MonoBehaviour
         }
     }
 
+    private GameObject AddButton(int i)
+    {
+        ConstellationItem item = contellationManager.constellationItemList[i];
+        GameObject newButton = constellationObjectPool.GetObject();
+        newButton.transform.SetParent(contentPanel, false);
+
+        ConstellationsScrollViewButton sampleButton = newButton.GetComponent<ConstellationsScrollViewButton>();
+        sampleButton.Setup(item, this, i);
+        return newButton;
+    }
+
     private void AddButtons()
     {
+        var notCollectableColor = Color.grey;
+        notCollectableColor.a = 0.3f;
+        var collectableColor = Color.red;
+        collectableColor.a = 0.3f;
         for (int i = 0; i < contellationManager.constellationItemList.Count; i++)
-        {
-            Debug.Log(i);
-            ConstellationItem item = contellationManager.constellationItemList[i];
-            GameObject newButton = constellationObjectPool.GetObject();
-            newButton.transform.SetParent(contentPanel, false);
+            if (contellationManager.constellationItemList[i].collectable == 1) {
+                GameObject newButton = AddButton(i);
+                newButton.GetComponent<Image>().color = collectableColor;
+            }
+        for (int i = 0; i < contellationManager.constellationItemList.Count; i++)
+            if (contellationManager.constellationItemList[i].collectable == 0)
+            {
+                GameObject newButton = AddButton(i);
+                newButton.GetComponent<Image>().color = notCollectableColor;
+            }
 
-            ConstellationsScrollViewButton sampleButton = newButton.GetComponent<ConstellationsScrollViewButton>();
-            sampleButton.Setup(item, this);
-        }
     }
 
 }

@@ -9,13 +9,14 @@ public class ConstellationsScrollViewButton : MonoBehaviour {
     public Text descriptionLabel;
     public Text collectableLabel;
     public Image constellationImage;
+    int id;
     // Use this for initialization
     ConstellationItem source;
     void activateConstellation()
     {
         if (source.collectable == 1)
         {
-            menuManager.activateConstellation(source);
+            menuManager.activateConstellationMatch(id);
         }
     }
 
@@ -26,8 +27,9 @@ public class ConstellationsScrollViewButton : MonoBehaviour {
 
 
     public void Setup(ConstellationItem currentItem,
-        ConstellationsMenuManager _menuManager)
+        ConstellationsMenuManager _menuManager, int idInContellationList)
     {
+        id = idInContellationList;
         source = currentItem;
         menuManager = _menuManager;
         descriptionLabel.text = source.name;

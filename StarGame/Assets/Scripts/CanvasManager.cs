@@ -10,8 +10,8 @@ public class CanvasManager : MonoBehaviour {
 
     public Button invokeMenuButton;
     public ConstellationsMenuManager constellationsPanel;
-    
-    
+    public MusicManager musicManager;
+
     private Vector3 offset;
 
     public ConstellationManager constellationManager;
@@ -23,8 +23,15 @@ public class CanvasManager : MonoBehaviour {
     {   
         invokeMenuButton.gameObject.SetActive(!status);
         constellationsPanel.transform.gameObject.SetActive(status);
-        if (status) 
+        constellationMatchDisplayInFocus.SetActive(!status);
+        if (status)
+        {
             constellationsPanel.RefreshDisplay();
+            musicManager.ChangeChannel("menu");
+        } else
+        {
+            musicManager.ChangeChannel("find");
+        }
     }
     public void setConstellationMatch(int idInCostellationItemList)
     {

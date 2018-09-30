@@ -23,7 +23,6 @@ public class CanvasManager : MonoBehaviour {
     {   
         invokeMenuButton.gameObject.SetActive(!status);
         constellationsPanel.transform.gameObject.SetActive(status);
-        constellationMatchDisplayInFocus.SetActive(!status);
         if (status)
         {
             constellationsPanel.RefreshDisplay();
@@ -62,11 +61,11 @@ public class CanvasManager : MonoBehaviour {
         // disable matching constellation in camera 
         constellationMatchDisplayInFocus.SetActive(false);
 
-
         // change status of constellation
         // set collectable to 0
         constellationManager.constellationItemList[constellationMatchItemId].collectable = 0;
-     
+        musicManager.ChangeChannel("background");
+
     }
 
     private void Update()
@@ -75,6 +74,7 @@ public class CanvasManager : MonoBehaviour {
         {
             Vector3 newRotation = new Vector3(playerFocus.transform.eulerAngles.x, playerFocus.transform.eulerAngles.y, playerFocus.transform.eulerAngles.z);
             constellationMatchDisplayInFocus.transform.rotation = Quaternion.Euler(newRotation);
+            musicManager.UpdateFindingDistanceMusic(constellationMatchItem, constellationMatchDisplayInFocus);
             if (ConstellationManager.IsMatchConstellation(constellationMatchItem, constellationMatchDisplayInFocus)) 
                 matchConstellation();
         }

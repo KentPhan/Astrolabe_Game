@@ -174,8 +174,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6f5a59e2f9e4e4c86b1de852df1be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  control: 0
+  playerCamera: {fileID: 20331785976776794}
   axes: 0
-  wantedMode: 1
+  wantedMode: 0
   sensitivityX: 15
   sensitivityY: 15
   minimumX: -360

@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
+
+
     }
 
     // Update is called once per frame
@@ -61,4 +63,26 @@ public class GameManager : MonoBehaviour
     {
 
     }
+
+
+    public void GoToFreeRoam()
+    {
+        CanvasManager.Instance.ShowFreeRoam();
+        _currentState = GameState.FreeRoam;
+
+    }
+
+    public void GoToCollectionLog()
+    {
+        _currentState = GameState.CollectionLog;
+    }
+
+
+    public void GoToMatchMode()
+    {
+        _currentState = GameState.MatchMode;
+    }
 }
+
+
+

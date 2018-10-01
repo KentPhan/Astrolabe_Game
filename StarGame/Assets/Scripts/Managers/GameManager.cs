@@ -21,6 +21,17 @@ public class GameManager : MonoBehaviour
     }
 
 
+    enum GameState
+    {
+        Start,
+        FreeRoam,
+        CollectionLog,
+        MatchMode
+    }
+    private GameState _currentState = GameState.Start;
+
+
+
     private GameManager()
     {
 

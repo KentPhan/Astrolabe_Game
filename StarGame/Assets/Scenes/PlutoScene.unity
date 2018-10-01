@@ -148,7 +148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0.00012207031}
+  m_AnchoredPosition: {x: -0.000061035156, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2394411
@@ -252,7 +252,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &14019020
 GameObject:
@@ -382,11 +382,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!1 &173049111 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: d6ce7c31c3675044b975ce7c1cfb7e0c,
-    type: 3}
-  m_PrefabInternal: {fileID: 1902127016}
 --- !u!1 &274241468
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,7 +685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerFocus: {fileID: 1165243249}
-  constellationMatchDisplayInFocus: {fileID: 173049111}
+  constellationMatchDisplayInFocus: {fileID: 1905389221}
   invokeMenuButton: {fileID: 1282654184}
   constellationsPanel: {fileID: 1928790305}
   musicManager: {fileID: 1194727170}
@@ -1378,7 +1373,7 @@ Transform:
   - {fileID: 1233995620}
   - {fileID: 1907557038}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1194727170
 MonoBehaviour:
@@ -1930,7 +1925,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4060593060129758, guid: 41615b637ed8a5c4c92746004883340a, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41615b637ed8a5c4c92746004883340a, type: 2}
@@ -2257,60 +2252,57 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 20331785976776794, guid: b3a415fb9d3540546892d69bb238b629,
     type: 2}
   m_PrefabInternal: {fileID: 1258256882}
---- !u!1001 &1902127016
+--- !u!1001 &1856210725
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 400000, guid: d6ce7c31c3675044b975ce7c1cfb7e0c, type: 3}
+    - target: {fileID: 4758689809042192, guid: c1d37b9a4f250f24c9e35b5db6eed7a1, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d6ce7c31c3675044b975ce7c1cfb7e0c, type: 3}
+    - target: {fileID: 4758689809042192, guid: c1d37b9a4f250f24c9e35b5db6eed7a1, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d6ce7c31c3675044b975ce7c1cfb7e0c, type: 3}
+    - target: {fileID: 4758689809042192, guid: c1d37b9a4f250f24c9e35b5db6eed7a1, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d6ce7c31c3675044b975ce7c1cfb7e0c, type: 3}
+    - target: {fileID: 4758689809042192, guid: c1d37b9a4f250f24c9e35b5db6eed7a1, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d6ce7c31c3675044b975ce7c1cfb7e0c, type: 3}
+    - target: {fileID: 4758689809042192, guid: c1d37b9a4f250f24c9e35b5db6eed7a1, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d6ce7c31c3675044b975ce7c1cfb7e0c, type: 3}
+    - target: {fileID: 4758689809042192, guid: c1d37b9a4f250f24c9e35b5db6eed7a1, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d6ce7c31c3675044b975ce7c1cfb7e0c, type: 3}
+    - target: {fileID: 4758689809042192, guid: c1d37b9a4f250f24c9e35b5db6eed7a1, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d6ce7c31c3675044b975ce7c1cfb7e0c, type: 3}
+    - target: {fileID: 4758689809042192, guid: c1d37b9a4f250f24c9e35b5db6eed7a1, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: d6ce7c31c3675044b975ce7c1cfb7e0c, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 0c9c1176284070a4ca9899b61d978f17, type: 2}
-    - target: {fileID: 400000, guid: d6ce7c31c3675044b975ce7c1cfb7e0c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: d6ce7c31c3675044b975ce7c1cfb7e0c, type: 3}
+    - target: {fileID: 1893817027679614, guid: c1d37b9a4f250f24c9e35b5db6eed7a1, type: 2}
       propertyPath: m_Name
       value: ConstellationMatch
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d6ce7c31c3675044b975ce7c1cfb7e0c, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: c1d37b9a4f250f24c9e35b5db6eed7a1, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1905389221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1893817027679614, guid: c1d37b9a4f250f24c9e35b5db6eed7a1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1856210725}
 --- !u!1 &1907557037
 GameObject:
   m_ObjectHideFlags: 0
@@ -2574,7 +2566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9976238632806448f9b4ae3bdacb12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  constellationPrefab: {fileID: 1543576429224700, guid: 59399923b701f294c8afe0418222cb27,
+  constellationPrefab: {fileID: 1893817027679614, guid: c1d37b9a4f250f24c9e35b5db6eed7a1,
     type: 2}
   constellationItemList:
   - name: Ursa1
@@ -2604,7 +2596,7 @@ Transform:
   m_Children:
   - {fileID: 1980759374}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1946920911
 Prefab:

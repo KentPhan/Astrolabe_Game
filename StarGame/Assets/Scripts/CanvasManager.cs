@@ -17,24 +17,28 @@ public class CanvasManager : MonoBehaviour {
     public ConstellationManager constellationManager;
     // matching constellation
     public ConstellationItem constellationMatchItem;
-    private int constellationMatchItemId;
+    private int constellationMatchItemId = -1;
 
     public void setMenuStatus(bool status)
     {   
         invokeMenuButton.gameObject.SetActive(!status);
         constellationsPanel.transform.gameObject.SetActive(status);
+        musicManager.ChangeChannel("menu");
+        constellationMatchDisplayInFocus.SetActive(false);
         if (status)
-        {
             constellationsPanel.RefreshDisplay();
-            musicManager.ChangeChannel("menu");
-        } else
+        else if (constellationMatchItemId >= 0)
         {
             musicManager.ChangeChannel("find");
+            constellationMatchDisplayInFocus.SetActive(true);
         }
     }
+    
     public void setConstellationMatch(int idInCostellationItemList)
     {
+
         constellationMatchDisplayInFocus.SetActive(true);
+        musicManager.ChangeChannel("find");
         Debug.Log("Enter set image! id:"+ idInCostellationItemList);
         constellationMatchItemId = idInCostellationItemList;
         constellationMatchItem = constellationManager.constellationItemList[idInCostellationItemList];
@@ -42,7 +46,6 @@ public class CanvasManager : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
-        constellationMatchDisplayInFocus.SetActive(false);
         setMenuStatus(false);
         constellationsPanel.canvasManager = this;
         invokeMenuButton.onClick.AddListener(invokeMenu);
@@ -58,13 +61,15 @@ public class CanvasManager : MonoBehaviour {
         Debug.Log("Matching!");
         // TODO: animation display
 
-        // disable matching constellation in camera 
-        constellationMatchDisplayInFocus.SetActive(false);
-
         // change status of constellation
         // set collectable to 0
         constellationManager.constellationItemList[constellationMatchItemId].collectable = 0;
+        
+        // disable matching constellation in camera and set status to unavailable
+        constellationMatchDisplayInFocus.SetActive(false);
         musicManager.ChangeChannel("background");
+        constellationMatchItemId = -1;
+
 
     }
 

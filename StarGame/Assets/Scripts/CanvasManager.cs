@@ -4,22 +4,45 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CanvasManager : MonoBehaviour {
+
+    public GameObject playerFocus;
+    public GameObject constellationMatchDisplayInFocus;
+
     public Button invokeMenuButton;
-    public Image constellationMatchImage;
     public ConstellationsMenuManager constellationsPanel;
-    public ConstellationItem displayConstellationItem;
+    public MusicManager musicManager;
+
+    private Vector3 offset;
+
+    public ConstellationManager constellationManager;
+    // matching constellation
+    public ConstellationItem constellationMatchItem;
+    private int constellationMatchItemId = -1;
+
     public void setMenuStatus(bool status)
-    {
-        
+    {   
         invokeMenuButton.gameObject.SetActive(!status);
-        constellationMatchImage.gameObject.SetActive(!status);
         constellationsPanel.transform.gameObject.SetActive(status);
+        musicManager.ChangeChannel("menu");
+        constellationMatchDisplayInFocus.SetActive(false);
+        if (status)
+            constellationsPanel.RefreshDisplay();
+        else if (constellationMatchItemId >= 0)
+        {
+            musicManager.ChangeChannel("find");
+            constellationMatchDisplayInFocus.SetActive(true);
+        }
     }
-    public void setConstellationItem(ConstellationItem currentItem)
+    
+    public void setConstellationMatch(int idInCostellationItemList)
     {
-        Debug.Log("Enter set image!");
-        displayConstellationItem = currentItem;
-        constellationMatchImage.sprite = displayConstellationItem.image;
+
+        constellationMatchDisplayInFocus.SetActive(true);
+        musicManager.ChangeChannel("find");
+        Debug.Log("Enter set image! id:"+ idInCostellationItemList);
+        constellationMatchItemId = idInCostellationItemList;
+        constellationMatchItem = constellationManager.constellationItemList[idInCostellationItemList];
+        constellationMatchDisplayInFocus.transform.GetComponentInChildren<Renderer>().material = constellationMatchItem.matchMaterial;
     }
     // Use this for initialization
     void Start () {
@@ -31,6 +54,35 @@ public class CanvasManager : MonoBehaviour {
     void invokeMenu()
     {
         setMenuStatus(true);
+    }
+
+    void matchConstellation()
+    {
+        Debug.Log("Matching!");
+        // TODO: animation display
+
+        // change status of constellation
+        // set collectable to 0
+        constellationManager.constellationItemList[constellationMatchItemId].collectable = 0;
+        
+        // disable matching constellation in camera and set status to unavailable
+        constellationMatchDisplayInFocus.SetActive(false);
+        musicManager.ChangeChannel("background");
+        constellationMatchItemId = -1;
+
+
+    }
+
+    private void Update()
+    {
+        if (constellationMatchDisplayInFocus.activeInHierarchy)
+        {
+            Vector3 newRotation = new Vector3(playerFocus.transform.eulerAngles.x, playerFocus.transform.eulerAngles.y, playerFocus.transform.eulerAngles.z);
+            constellationMatchDisplayInFocus.transform.rotation = Quaternion.Euler(newRotation);
+            musicManager.UpdateFindingDistanceMusic(constellationMatchItem, constellationMatchDisplayInFocus);
+            if (ConstellationManager.IsMatchConstellation(constellationMatchItem, constellationMatchDisplayInFocus)) 
+                matchConstellation();
+        }
     }
 
 }

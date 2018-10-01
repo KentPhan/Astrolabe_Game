@@ -49,7 +49,7 @@ public class ObjectPool : MonoBehaviour
             // make the instance a child of this and disable it
             toReturn.transform.SetParent(transform);
             toReturn.SetActive(false);
-
+            toReturn.transform.localScale = new Vector3(1, 1, 1);
             // add the instance to the collection of inactive instances
             inactiveInstances.Push(toReturn);
         }

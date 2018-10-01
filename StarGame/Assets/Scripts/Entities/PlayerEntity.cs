@@ -12,10 +12,10 @@ public class PlayerEntity : Entity
     public enum ControllerScheme { Mouse = 0, Gyroscope = 1 }
 
     public ControllerScheme control = ControllerScheme.Mouse;
-
+    public Camera playerCamera;
     public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
     public RotationAxes axes = RotationAxes.MouseXAndY;
-
+    public CanvasManager canavasManager;
     public CursorLockMode wantedMode;
 
     // Mouse
@@ -43,6 +43,15 @@ public class PlayerEntity : Entity
         m_Gyro.enabled = true;
     }
 
+    void ResolveMatchConstellation()
+    {
+        RaycastHit hit;
+        Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit))
+        {
+            Debug.Log("hit" + hit.point);
+        }
+    }
 
     void Update()
     {
@@ -82,6 +91,8 @@ public class PlayerEntity : Entity
             gyroRot = new Quaternion(gyroRot.x, gyroRot.y, -gyroRot.z, -gyroRot.w);
             transform.rotation = gyroRot;
         }
+
+        ResolveMatchConstellation();
 
     }
 

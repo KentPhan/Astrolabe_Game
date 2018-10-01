@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 
@@ -20,7 +18,6 @@ public class ConstellationsMenuManager : MonoBehaviour
 
     public void activateConstellationMatch(int idInCostellationItemList)
     {
-        Debug.Log("Click Button");
         canvasManager.setMenuStatus(false);
         canvasManager.setConstellationMatch(idInCostellationItemList);
     }
@@ -64,7 +61,8 @@ public class ConstellationsMenuManager : MonoBehaviour
         var collectableColor = Color.red;
         collectableColor.a = 0.3f;
         for (int i = 0; i < contellationManager.constellationItemList.Count; i++)
-            if (contellationManager.constellationItemList[i].collectable == 1) {
+            if (contellationManager.constellationItemList[i].collectable == 1)
+            {
                 GameObject newButton = AddButton(i);
                 newButton.GetComponent<Image>().color = collectableColor;
             }

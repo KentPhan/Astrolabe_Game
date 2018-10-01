@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class CanvasManager : MonoBehaviour
@@ -79,7 +77,6 @@ public class CanvasManager : MonoBehaviour
 
     public void ShowFreeRoam()
     {
-        Debug.Log("You clicked the button!");
         setMenuStatus(false);
         startPanel.SetActive(false);
     }

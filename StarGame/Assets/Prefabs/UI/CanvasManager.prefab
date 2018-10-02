@@ -847,7 +847,7 @@ MonoBehaviour:
   freeRoamPanel: {fileID: 1914062170080572}
   collectionMenuPanel: {fileID: 1568164780297760}
   constellationManager: {fileID: 0}
-  constellationMatchItem:
+  ConstellationMatch:
     name: 
     collectable: 0
     eulerAngles: {x: 0, y: 0, z: 0}

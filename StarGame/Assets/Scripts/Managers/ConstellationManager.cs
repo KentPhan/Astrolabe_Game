@@ -19,7 +19,7 @@ public class ConstellationManager : MonoBehaviour
 
     // Use this for initialization
     public GameObject constellationPrefab;
-    public List<ConstellationItem> constellationItemList;
+    public List<Constellation> constellationItemList;
     // Update is called once per frame
 
     private ConstellationManager()
@@ -47,13 +47,13 @@ public class ConstellationManager : MonoBehaviour
         return x;
     }
 
-    public static bool IsMatchConstellation(ConstellationItem displayItem, GameObject currentFocus)
+    public static bool IsMatchConstellation(Constellation display, GameObject currentFocus)
     {
-        //Debug.Log(displayItem.rotation.x - currentFocus.transform.rotation.x);
-        //Debug.Log(Mathf.Abs(displayItem.rotation.x - currentFocus.transform.rotation.x));
-        if (Mathf.Abs(constrainEulerAngle(displayItem.eulerAngles.x) - constrainEulerAngle(currentFocus.transform.eulerAngles.x)) < 2f &&
-            Mathf.Abs(constrainEulerAngle(displayItem.eulerAngles.y) - constrainEulerAngle(currentFocus.transform.eulerAngles.y)) < 2f &&
-            Mathf.Abs(constrainEulerAngle(displayItem.eulerAngles.z) - constrainEulerAngle(currentFocus.transform.eulerAngles.z)) < 2f)
+        //Debug.Log(display.rotation.x - currentFocus.transform.rotation.x);
+        //Debug.Log(Mathf.Abs(display.rotation.x - currentFocus.transform.rotation.x));
+        if (Mathf.Abs(constrainEulerAngle(display.eulerAngles.x) - constrainEulerAngle(currentFocus.transform.eulerAngles.x)) < 2f &&
+            Mathf.Abs(constrainEulerAngle(display.eulerAngles.y) - constrainEulerAngle(currentFocus.transform.eulerAngles.y)) < 2f &&
+            Mathf.Abs(constrainEulerAngle(display.eulerAngles.z) - constrainEulerAngle(currentFocus.transform.eulerAngles.z)) < 2f)
             return true;
         return false;
     }

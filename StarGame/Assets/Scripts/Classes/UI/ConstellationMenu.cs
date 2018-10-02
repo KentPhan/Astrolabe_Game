@@ -36,7 +36,7 @@ public class ConstellationMenu : MonoBehaviour
 
     private GameObject AddButton(int i)
     {
-        ConstellationItem item = contellationManager.constellationItemList[i];
+        Constellation item = contellationManager.constellationItemList[i];
         GameObject newButton = GameManager.Instance.GetPool().GetObject();
         newButton.transform.SetParent(contentPanel, false);
 

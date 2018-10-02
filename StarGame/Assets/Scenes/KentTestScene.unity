@@ -289,11 +289,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114745645300330102, guid: b3a415fb9d3540546892d69bb238b629,
-        type: 2}
-      propertyPath: control
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3a415fb9d3540546892d69bb238b629, type: 2}
   m_IsPrefabAsset: 0
@@ -600,11 +595,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114852042880624218, guid: ad6a0410e9792d94c8f0e203e7fd8a8b,
-        type: 2}
-      propertyPath: contellationManager
-      value: 
-      objectReference: {fileID: 1736268765}
     - target: {fileID: 114471935684820614, guid: ad6a0410e9792d94c8f0e203e7fd8a8b,
         type: 2}
       propertyPath: playerFocus
@@ -618,6 +608,11 @@ Prefab:
     - target: {fileID: 114471935684820614, guid: ad6a0410e9792d94c8f0e203e7fd8a8b,
         type: 2}
       propertyPath: constellationManager
+      value: 
+      objectReference: {fileID: 1736268765}
+    - target: {fileID: 114852042880624218, guid: ad6a0410e9792d94c8f0e203e7fd8a8b,
+        type: 2}
+      propertyPath: contellationManager
       value: 
       objectReference: {fileID: 1736268765}
     m_RemovedComponents: []

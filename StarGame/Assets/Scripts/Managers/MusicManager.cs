@@ -74,28 +74,28 @@ public class MusicManager : MonoBehaviour
 
     }
 
-    bool lessThanDistance(ConstellationItem displayItem, GameObject currentFocus, float distance)
+    bool lessThanDistance(Constellation display, GameObject currentFocus, float distance)
     {
-        if (Mathf.Abs(constrainEulerAngle(displayItem.eulerAngles.x) - constrainEulerAngle(currentFocus.transform.eulerAngles.x)) < distance &&
-            Mathf.Abs(constrainEulerAngle(displayItem.eulerAngles.y) - constrainEulerAngle(currentFocus.transform.eulerAngles.y)) < distance &&
-            Mathf.Abs(constrainEulerAngle(displayItem.eulerAngles.z) - constrainEulerAngle(currentFocus.transform.eulerAngles.z)) < distance)
+        if (Mathf.Abs(constrainEulerAngle(display.eulerAngles.x) - constrainEulerAngle(currentFocus.transform.eulerAngles.x)) < distance &&
+            Mathf.Abs(constrainEulerAngle(display.eulerAngles.y) - constrainEulerAngle(currentFocus.transform.eulerAngles.y)) < distance &&
+            Mathf.Abs(constrainEulerAngle(display.eulerAngles.z) - constrainEulerAngle(currentFocus.transform.eulerAngles.z)) < distance)
             return true;
         return false;
     }
 
 
-    public void UpdateFindingDistanceMusic(ConstellationItem displayItem, GameObject currentFocus)
+    public void UpdateFindingDistanceMusic(Constellation display, GameObject currentFocus)
     {
         float distanceA = 30f;
         float distanceB = 15f;
         float distanceC = 5f;
         AudioSource beat = findMusicCollection.GetComponent<AudioSource>();
-        if (lessThanDistance(displayItem, currentFocus, distanceA))
+        if (lessThanDistance(display, currentFocus, distanceA))
         {
             beat.mute = false;
-            if (lessThanDistance(displayItem, currentFocus, distanceC))
+            if (lessThanDistance(display, currentFocus, distanceC))
                 beat.pitch = 2f;
-            else if (lessThanDistance(displayItem, currentFocus, distanceB))
+            else if (lessThanDistance(display, currentFocus, distanceB))
                 beat.pitch = 1.5f;
             else
                 beat.pitch = 1f;

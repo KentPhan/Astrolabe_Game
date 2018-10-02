@@ -10,7 +10,7 @@ public class ConstellationsScrollViewButton : MonoBehaviour
     public Image constellationImage;
     int id;
     // Use this for initialization
-    ConstellationItem source;
+    Constellation source;
     void activateConstellation()
     {
         if (source.collectable == 1)
@@ -26,11 +26,11 @@ public class ConstellationsScrollViewButton : MonoBehaviour
     }
 
 
-    public void Setup(ConstellationItem currentItem,
+    public void Setup(Constellation current,
         ConstellationMenu _menuManager, int idInContellationList)
     {
         id = idInContellationList;
-        source = currentItem;
+        source = current;
         menuManager = _menuManager;
         descriptionLabel.text = source.name;
         constellationImage.sprite = source.icon;

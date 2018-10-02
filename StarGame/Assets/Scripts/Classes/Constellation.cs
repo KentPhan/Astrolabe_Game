@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 [System.Serializable]
-public class ConstellationItem
+public class Constellation
 {
     public string name;
     public int collectable = 0;

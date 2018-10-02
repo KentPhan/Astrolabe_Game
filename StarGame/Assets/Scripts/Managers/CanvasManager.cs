@@ -39,7 +39,7 @@ public class CanvasManager : MonoBehaviour
 
     // matching constellation
     public ConstellationManager constellationManager;
-    public ConstellationItem constellationMatchItem;
+    public Constellation ConstellationMatch;
     private int constellationMatchItemId = -1;
     private float matchTime = 0.5f;
 
@@ -128,9 +128,9 @@ public class CanvasManager : MonoBehaviour
         MusicManager.Instance.ChangeChannel("find");
         Debug.Log("Enter set image! id:" + idInCostellationItemList);
         constellationMatchItemId = idInCostellationItemList;
-        constellationMatchItem = constellationManager.constellationItemList[idInCostellationItemList];
-        constellationMatchDisplayInFocus.transform.GetComponentInChildren<Renderer>().material = constellationMatchItem.matchMaterial;
-        constellationMatchDisplayInFocus.transform.localScale = constellationMatchItem.scale;
+        ConstellationMatch = constellationManager.constellationItemList[idInCostellationItemList];
+        constellationMatchDisplayInFocus.transform.GetComponentInChildren<Renderer>().material = ConstellationMatch.matchMaterial;
+        constellationMatchDisplayInFocus.transform.localScale = ConstellationMatch.scale;
     }
 
 
@@ -157,8 +157,8 @@ public class CanvasManager : MonoBehaviour
         {
             Vector3 newRotation = new Vector3(playerFocus.transform.eulerAngles.x, playerFocus.transform.eulerAngles.y, playerFocus.transform.eulerAngles.z);
             constellationMatchDisplayInFocus.transform.rotation = Quaternion.Euler(newRotation);
-            MusicManager.Instance.UpdateFindingDistanceMusic(constellationMatchItem, constellationMatchDisplayInFocus);
-            if (ConstellationManager.IsMatchConstellation(constellationMatchItem, constellationMatchDisplayInFocus))
+            MusicManager.Instance.UpdateFindingDistanceMusic(ConstellationMatch, constellationMatchDisplayInFocus);
+            if (ConstellationManager.IsMatchConstellation(ConstellationMatch, constellationMatchDisplayInFocus))
             {
                 matchTime += Time.deltaTime;
                 if (matchTime > 0.5)

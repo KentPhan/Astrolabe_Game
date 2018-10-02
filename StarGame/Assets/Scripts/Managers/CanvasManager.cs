@@ -38,7 +38,6 @@ public class CanvasManager : MonoBehaviour
 
 
     // matching constellation
-    public ConstellationManager constellationManager;
     public Constellation ConstellationMatch;
     private int constellationMatchItemId = -1;
     private float matchTime = 0.5f;
@@ -128,7 +127,7 @@ public class CanvasManager : MonoBehaviour
         MusicManager.Instance.ChangeChannel("find");
         Debug.Log("Enter set image! id:" + idInCostellationItemList);
         constellationMatchItemId = idInCostellationItemList;
-        ConstellationMatch = constellationManager.constellationItemList[idInCostellationItemList];
+        ConstellationMatch = ConstellationManager.Instance.constellationItemList[idInCostellationItemList];
         constellationMatchDisplayInFocus.transform.GetComponentInChildren<Renderer>().material = ConstellationMatch.matchMaterial;
         constellationMatchDisplayInFocus.transform.localScale = ConstellationMatch.scale;
     }
@@ -141,7 +140,7 @@ public class CanvasManager : MonoBehaviour
 
         // change status of constellation
         // set collectable to 0
-        constellationManager.constellationItemList[constellationMatchItemId].collectable = 0;
+        ConstellationManager.Instance.constellationItemList[constellationMatchItemId].collectable = 0;
 
         // disable matching constellation in camera and set status to unavailable
         constellationMatchDisplayInFocus.SetActive(false);

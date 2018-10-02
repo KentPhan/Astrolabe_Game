@@ -947,7 +947,6 @@ MonoBehaviour:
   startPanel: {fileID: 1557478520430690}
   freeRoamPanel: {fileID: 1914062170080572}
   collectionMenuPanel: {fileID: 1568164780297760}
-  constellationManager: {fileID: 0}
   ConstellationMatch:
     name: 
     collectable: 0

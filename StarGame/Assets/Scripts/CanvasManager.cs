@@ -43,6 +43,7 @@ public class CanvasManager : MonoBehaviour {
         constellationMatchItemId = idInCostellationItemList;
         constellationMatchItem = constellationManager.constellationItemList[idInCostellationItemList];
         constellationMatchDisplayInFocus.transform.GetComponentInChildren<Renderer>().material = constellationMatchItem.matchMaterial;
+        constellationMatchDisplayInFocus.transform.localScale = constellationMatchItem.scale;
     }
     // Use this for initialization
     void Start () {

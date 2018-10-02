@@ -61,18 +61,18 @@ public class ConstellationsMenuManager : MonoBehaviour
     {
         var notCollectableColor = Color.grey;
         notCollectableColor.a = 0.3f;
-        var collectableColor = Color.red;
+        var collectableColor = Color.black;
         collectableColor.a = 0.3f;
         for (int i = 0; i < contellationManager.constellationItemList.Count; i++)
             if (contellationManager.constellationItemList[i].collectable == 1) {
                 GameObject newButton = AddButton(i);
-                newButton.GetComponent<Image>().color = collectableColor;
+               // newButton.GetComponent<Image>().color = collectableColor;
             }
         for (int i = 0; i < contellationManager.constellationItemList.Count; i++)
             if (contellationManager.constellationItemList[i].collectable == 0)
             {
                 GameObject newButton = AddButton(i);
-                newButton.GetComponent<Image>().color = notCollectableColor;
+               // newButton.GetComponent<Image>().color = notCollectableColor;
             }
 
     }

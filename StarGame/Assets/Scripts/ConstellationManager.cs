@@ -38,6 +38,7 @@ public class ConstellationManager : MonoBehaviour {
                     constellationPrefab, 
                     new Vector3(0, 0, 0), 
                     Quaternion.Euler(constellationItemList[i].eulerAngles));
+            constellationItemList[i].displayInMap.transform.localScale = constellationItemList[i].scale;
             constellationItemList[i].displayInMap.transform.parent = transform;
             constellationItemList[i].displayInMap.name = 
                 constellationItemList[i].name;

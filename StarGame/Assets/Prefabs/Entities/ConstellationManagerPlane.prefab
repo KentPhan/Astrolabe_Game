@@ -1,0 +1,190 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1469598677930232}
+  m_IsPrefabAsset: 1
+--- !u!1 &1469598677930232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4247276379951404}
+  - component: {fileID: 114627376620626266}
+  m_Layer: 0
+  m_Name: ConstellationManagerPlane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1906486888406166
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4811277199112472}
+  - component: {fileID: 33295932677506112}
+  - component: {fileID: 23457538130673946}
+  m_Layer: 0
+  m_Name: ConstellationPlane:pSphere1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1934953093050846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4134197096157208}
+  m_Layer: 0
+  m_Name: ConstellationDisplayItem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4134197096157208
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1934953093050846}
+  m_LocalRotation: {x: -0.39713123, y: 0.30997548, z: 0.14454393, w: 0.8516508}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4811277199112472}
+  m_Father: {fileID: 4247276379951404}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -50, y: 40, z: 0}
+--- !u!4 &4247276379951404
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1469598677930232}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4134197096157208}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4811277199112472
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1906486888406166}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4134197096157208}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23457538130673946
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1906486888406166}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 7392c81ee446cc94dae99d0082d38ece, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &33295932677506112
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1906486888406166}
+  m_Mesh: {fileID: 4300000, guid: d6ce7c31c3675044b975ce7c1cfb7e0c, type: 3}
+--- !u!114 &114627376620626266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1469598677930232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9976238632806448f9b4ae3bdacb12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  constellationPrefab: {fileID: 1893817027679614, guid: c1d37b9a4f250f24c9e35b5db6eed7a1,
+    type: 2}
+  constellationItemList:
+  - name: Traurus
+    collectable: 1
+    eulerAngles: {x: -65.659, y: 39.166, z: -30.815}
+    scale: {x: 5, y: 5, z: 1}
+    icon: {fileID: 21300000, guid: 967499fce9d2a5441a2c9b8444f380e6, type: 3}
+    matchMaterial: {fileID: 2100000, guid: dc348527722faa748b604e35b4583559, type: 2}
+    displayMaterial: {fileID: 2100000, guid: dc348527722faa748b604e35b4583559, type: 2}
+    displayInMap: {fileID: 0}
+  - name: CanisMajor
+    collectable: 1
+    eulerAngles: {x: -32.955, y: -32.336, z: 15.698}
+    scale: {x: 5, y: 5, z: 1}
+    icon: {fileID: 21300000, guid: c5c61601f2c36cf489e417d1e48903db, type: 3}
+    matchMaterial: {fileID: 2100000, guid: 9320e4b316222a54c9f719718950b8a8, type: 2}
+    displayMaterial: {fileID: 2100000, guid: 9320e4b316222a54c9f719718950b8a8, type: 2}
+    displayInMap: {fileID: 0}
+  - name: CanisMionor
+    collectable: 1
+    eulerAngles: {x: -50.66, y: -54.114, z: 28.063}
+    scale: {x: 5, y: 5, z: 1}
+    icon: {fileID: 21300000, guid: d48db6df00132e1418385b3efe347de7, type: 3}
+    matchMaterial: {fileID: 2100000, guid: fb50e57330bde5a42a8f49a2487a6efe, type: 2}
+    displayMaterial: {fileID: 2100000, guid: fb50e57330bde5a42a8f49a2487a6efe, type: 2}
+    displayInMap: {fileID: 0}
+  - name: Orion
+    collectable: 1
+    eulerAngles: {x: -62.393, y: -0.82, z: 0.211}
+    scale: {x: 5, y: 5, z: 1}
+    icon: {fileID: 21300000, guid: 36347178d3f5d274d9bfe67d6885131f, type: 3}
+    matchMaterial: {fileID: 2100000, guid: bd881c84339df6a408b3f5ae6c756374, type: 2}
+    displayMaterial: {fileID: 2100000, guid: bd881c84339df6a408b3f5ae6c756374, type: 2}
+    displayInMap: {fileID: 0}

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,7 +24,7 @@ public class GameManager : MonoBehaviour
         Start,
         FreeRoam,
         CollectionLog,
-        MatchMode
+        MatchStarsMode
     }
     private GameState _currentState = GameState.Start;
 
@@ -74,13 +72,16 @@ public class GameManager : MonoBehaviour
 
     public void GoToCollectionLog()
     {
+        CanvasManager.Instance.ShowCollectionLog();
+        MusicManager.Instance.ChangeChannel("menu");
         _currentState = GameState.CollectionLog;
     }
 
 
-    public void GoToMatchMode()
+    public void GoToMatchStarsMode()
     {
-        _currentState = GameState.MatchMode;
+        CanvasManager.Instance.ShowMatchMode();
+        _currentState = GameState.MatchStarsMode;
     }
 }
 

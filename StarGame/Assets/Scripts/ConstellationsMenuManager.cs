@@ -5,21 +5,19 @@ using UnityEngine.UI;
 public class ConstellationsMenuManager : MonoBehaviour
 {
     public Button CloseButton;
-    public CanvasManager canvasManager;
     // Use this for initialization
     public ConstellationManager contellationManager;
     public Transform contentPanel;
     public ObjectPool constellationObjectPool;
     void CloseMenu()
     {
-        Debug.Log(canvasManager);
-        canvasManager.setMenuStatus(false);
+        CanvasManager.Instance.setMenuStatus(false);
     }
 
     public void activateConstellationMatch(int idInCostellationItemList)
     {
-        canvasManager.setMenuStatus(false);
-        canvasManager.setConstellationMatch(idInCostellationItemList);
+        CanvasManager.Instance.setMenuStatus(false);
+        CanvasManager.Instance.setConstellationMatch(idInCostellationItemList);
     }
 
     void Start()

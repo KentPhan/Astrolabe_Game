@@ -19,10 +19,10 @@ public class CanvasManager : MonoBehaviour
 
 
     public GameObject playerFocus;
-    //public GameObject constellationMatchDisplayInFocus;
+    public GameObject constellationMatchDisplayInFocus;
 
 
-    public ConstellationsMenuManager constellationsPanel;
+
 
     private Vector3 offset;
 
@@ -32,6 +32,8 @@ public class CanvasManager : MonoBehaviour
 
     // Panels
     public GameObject startPanel;
+    public GameObject freeRoamPanel;
+    public GameObject collectionMenuPanel;
 
 
     // matching constellation
@@ -60,41 +62,62 @@ public class CanvasManager : MonoBehaviour
     void Start()
     {
         setMenuStatus(false);
-        constellationsPanel.canvasManager = this;
+        //constellationsPanel.canvasManager = this;
 
         // Event listeners
         startGameButton.onClick.AddListener(() =>
         {
             GameManager.Instance.GoToFreeRoam();
         });
-        openConsellationMenuButton.onClick.AddListener(invokeMenu);
+        openConsellationMenuButton.onClick.AddListener(() =>
+        {
+            GameManager.Instance.GoToCollectionLog();
+        });
     }
 
-    void invokeMenu()
-    {
-        setMenuStatus(true);
-    }
 
     public void ShowFreeRoam()
     {
+        // Deactivate other panels
         setMenuStatus(false);
         startPanel.SetActive(false);
+
+        // Show active panel
+        freeRoamPanel.SetActive(true);
+    }
+
+    public void ShowCollectionLog()
+    {
+        // Deactivate other panels
+        startPanel.SetActive(false);
+        freeRoamPanel.SetActive(false);
+
+        // Show active panel
+        setMenuStatus(true);
+        collectionMenuPanel.SetActive(true);
+
+        // Stuff Im trying to figure out still
+        //constellationMatchDisplayInFocus.SetActive(false);
+    }
+
+    public void ShowMatchMode()
+    {
+
     }
 
 
     public void setMenuStatus(bool status)
     {
-        openConsellationMenuButton.gameObject.SetActive(!status);
-        constellationsPanel.transform.gameObject.SetActive(status);
-        MusicManager.Instance.ChangeChannel("menu");
-        //constellationMatchDisplayInFocus.SetActive(false);
-        if (status)
-            constellationsPanel.RefreshDisplay();
-        else if (constellationMatchItemId >= 0)
-        {
-            MusicManager.Instance.ChangeChannel("find");
-            //constellationMatchDisplayInFocus.SetActive(true);
-        }
+
+
+
+        //if (status)
+        //    constellationsPanel.RefreshDisplay();
+        //else if (constellationMatchItemId >= 0)
+        //{
+        //    MusicManager.Instance.ChangeChannel("find");
+        //    //constellationMatchDisplayInFocus.SetActive(true);
+        //}
     }
 
     public void setConstellationMatch(int idInCostellationItemList)

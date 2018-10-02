@@ -27,7 +27,8 @@ public class GameManager : MonoBehaviour
         MatchStarsMode
     }
     private GameState _currentState = GameState.Start;
-
+    private ObjectPool _currentPool;
+    public GameObject poolObject;
 
 
     private GameManager()
@@ -51,9 +52,7 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
-
-
+        _currentPool = new ObjectPool(poolObject);
     }
 
     // Update is called once per frame
@@ -78,10 +77,16 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void GoToMatchStarsMode()
+    public void GoToMatchStarsMode(int idInCostellationItemList)
     {
-        CanvasManager.Instance.ShowMatchMode();
+        CanvasManager.Instance.ShowMatchMode(idInCostellationItemList);
         _currentState = GameState.MatchStarsMode;
+    }
+
+
+    public ObjectPool GetPool()
+    {
+        return _currentPool;
     }
 }
 

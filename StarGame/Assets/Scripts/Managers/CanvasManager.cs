@@ -61,7 +61,7 @@ public class CanvasManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        setMenuStatus(false);
+        collectionMenuPanel.SetActive(false);
         //constellationsPanel.canvasManager = this;
 
         // Event listeners
@@ -79,7 +79,7 @@ public class CanvasManager : MonoBehaviour
     public void ShowFreeRoam()
     {
         // Deactivate other panels
-        setMenuStatus(false);
+        collectionMenuPanel.SetActive(false);
         startPanel.SetActive(false);
 
         // Show active panel
@@ -90,45 +90,38 @@ public class CanvasManager : MonoBehaviour
     {
         // Deactivate other panels
         startPanel.SetActive(false);
-        freeRoamPanel.SetActive(false);
 
         // Show active panel
-        setMenuStatus(true);
         collectionMenuPanel.SetActive(true);
+        collectionMenuPanel.GetComponent<ConstellationsMenuManager>().RefreshDisplay();
 
         // Stuff Im trying to figure out still
-        //constellationMatchDisplayInFocus.SetActive(false);
+        constellationMatchDisplayInFocus.SetActive(false);
     }
 
-    public void ShowMatchMode()
+    public void ShowMatchMode(int i_matchId)
     {
+        // Deactivate other panels
+        collectionMenuPanel.SetActive(false);
 
+        if (constellationMatchItemId >= 0)
+        {
+            MusicManager.Instance.ChangeChannel("find");
+            constellationMatchDisplayInFocus.SetActive(true);
+        }
     }
 
-
-    public void setMenuStatus(bool status)
-    {
-
-
-
-        //if (status)
-        //    constellationsPanel.RefreshDisplay();
-        //else if (constellationMatchItemId >= 0)
-        //{
-        //    MusicManager.Instance.ChangeChannel("find");
-        //    //constellationMatchDisplayInFocus.SetActive(true);
-        //}
-    }
 
     public void setConstellationMatch(int idInCostellationItemList)
     {
 
-        //constellationMatchDisplayInFocus.SetActive(true);
+        constellationMatchDisplayInFocus.SetActive(true);
         MusicManager.Instance.ChangeChannel("find");
         Debug.Log("Enter set image! id:" + idInCostellationItemList);
         constellationMatchItemId = idInCostellationItemList;
         constellationMatchItem = constellationManager.constellationItemList[idInCostellationItemList];
-        //constellationMatchDisplayInFocus.transform.GetComponentInChildren<Renderer>().material = constellationMatchItem.matchMaterial;
+        constellationMatchDisplayInFocus.transform.GetComponentInChildren<Renderer>().material = constellationMatchItem.matchMaterial;
+        constellationMatchDisplayInFocus.transform.localScale = constellationMatchItem.scale;
     }
 
 
@@ -142,7 +135,7 @@ public class CanvasManager : MonoBehaviour
         constellationManager.constellationItemList[constellationMatchItemId].collectable = 0;
 
         // disable matching constellation in camera and set status to unavailable
-        //constellationMatchDisplayInFocus.SetActive(false);
+        constellationMatchDisplayInFocus.SetActive(false);
         MusicManager.Instance.ChangeChannel("background");
         constellationMatchItemId = -1;
 
@@ -151,14 +144,14 @@ public class CanvasManager : MonoBehaviour
 
     private void Update()
     {
-        //if (constellationMatchDisplayInFocus.activeInHierarchy)
-        //{
-        //    Vector3 newRotation = new Vector3(playerFocus.transform.eulerAngles.x, playerFocus.transform.eulerAngles.y, playerFocus.transform.eulerAngles.z);
-        //    constellationMatchDisplayInFocus.transform.rotation = Quaternion.Euler(newRotation);
-        //    MusicManager.Instance.UpdateFindingDistanceMusic(constellationMatchItem, constellationMatchDisplayInFocus);
-        //    if (ConstellationManager.IsMatchConstellation(constellationMatchItem, constellationMatchDisplayInFocus))
-        //        matchConstellation();
-        //}
+        if (constellationMatchItemId >= 0 && constellationMatchDisplayInFocus.activeInHierarchy)
+        {
+            Vector3 newRotation = new Vector3(playerFocus.transform.eulerAngles.x, playerFocus.transform.eulerAngles.y, playerFocus.transform.eulerAngles.z);
+            constellationMatchDisplayInFocus.transform.rotation = Quaternion.Euler(newRotation);
+            MusicManager.Instance.UpdateFindingDistanceMusic(constellationMatchItem, constellationMatchDisplayInFocus);
+            if (ConstellationManager.IsMatchConstellation(constellationMatchItem, constellationMatchDisplayInFocus))
+                matchConstellation();
+        }
     }
 
 }

@@ -1,13 +1,19 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 // A very simple object pooling class
 public class ObjectPool : MonoBehaviour
 {
     // the prefab that this object pool returns instances of
-    public GameObject prefab;
+    private GameObject prefab;
     // collection of currently inactive instances of the prefab
     private Stack<GameObject> inactiveInstances = new Stack<GameObject>();
+
+
+    public ObjectPool(GameObject i_poolObject)
+    {
+        prefab = i_poolObject;
+    }
 
     // Returns an instance of the prefab
     public GameObject GetObject()
@@ -47,7 +53,7 @@ public class ObjectPool : MonoBehaviour
         if (pooledObject != null && pooledObject.pool == this)
         {
             // make the instance a child of this and disable it
-            toReturn.transform.SetParent(transform);
+            toReturn.transform.SetParent(GameManager.Instance.gameObject.transform);
             toReturn.SetActive(false);
             toReturn.transform.localScale = new Vector3(1, 1, 1);
             // add the instance to the collection of inactive instances
@@ -57,7 +63,7 @@ public class ObjectPool : MonoBehaviour
         else
         {
             Debug.LogWarning(toReturn.name + " was returned to a pool it wasn't spawned from! Destroying.");
-            toReturn.transform.SetParent(transform);
+            toReturn.transform.SetParent(GameManager.Instance.gameObject.transform);
             Destroy(toReturn);
         }
     }

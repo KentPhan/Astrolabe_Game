@@ -8,15 +8,14 @@ public class ConstellationsMenuManager : MonoBehaviour
     // Use this for initialization
     public ConstellationManager contellationManager;
     public Transform contentPanel;
-    public ObjectPool constellationObjectPool;
     void CloseMenu()
     {
-        CanvasManager.Instance.setMenuStatus(false);
+        GameManager.Instance.GoToFreeRoam();
     }
 
     public void activateConstellationMatch(int idInCostellationItemList)
     {
-        CanvasManager.Instance.setMenuStatus(false);
+        GameManager.Instance.GoToMatchStarsMode(idInCostellationItemList);
         CanvasManager.Instance.setConstellationMatch(idInCostellationItemList);
     }
 
@@ -37,14 +36,14 @@ public class ConstellationsMenuManager : MonoBehaviour
         while (contentPanel.childCount > 0)
         {
             GameObject toRemove = contentPanel.GetChild(0).gameObject;
-            constellationObjectPool.ReturnObject(toRemove);
+            GameManager.Instance.GetPool().ReturnObject(toRemove);
         }
     }
 
     private GameObject AddButton(int i)
     {
         ConstellationItem item = contellationManager.constellationItemList[i];
-        GameObject newButton = constellationObjectPool.GetObject();
+        GameObject newButton = GameManager.Instance.GetPool().GetObject();
         newButton.transform.SetParent(contentPanel, false);
 
         ConstellationsScrollViewButton sampleButton = newButton.GetComponent<ConstellationsScrollViewButton>();
@@ -62,13 +61,13 @@ public class ConstellationsMenuManager : MonoBehaviour
             if (contellationManager.constellationItemList[i].collectable == 1)
             {
                 GameObject newButton = AddButton(i);
-               // newButton.GetComponent<Image>().color = collectableColor;
+                // newButton.GetComponent<Image>().color = collectableColor;
             }
         for (int i = 0; i < contellationManager.constellationItemList.Count; i++)
             if (contellationManager.constellationItemList[i].collectable == 0)
             {
                 GameObject newButton = AddButton(i);
-               // newButton.GetComponent<Image>().color = notCollectableColor;
+                // newButton.GetComponent<Image>().color = notCollectableColor;
             }
 
     }

@@ -30,7 +30,12 @@ public class CanvasManager : MonoBehaviour
     public GameObject startPanel;
     public GameObject freeRoamPanel;
     public GameObject collectionMenuPanel;
-    public GameObject constellationMatchScreenPanel;
+    public GameObject lookUpPanel;
+    public float lookUpBlinkDelay;
+    [Range(0.0f, 1.0f)]
+    public float lookUpBlinkPortionUnvisible;
+    private float _currentLookUpBlinkTime = 0.0f;
+    public GameObject constellationMatchScreenPanel; // Very different. A sphere that sits outside in world space and rotates to display constellations
 
 
     // matching constellation
@@ -59,6 +64,7 @@ public class CanvasManager : MonoBehaviour
     void Start()
     {
         collectionMenuPanel.SetActive(false);
+        lookUpPanel.SetActive(false);
         //constellationsPanel.canvasManager = this;
 
         // Event listeners
@@ -148,9 +154,42 @@ public class CanvasManager : MonoBehaviour
 
     private void Update()
     {
+        PlayerEntity currentPlayer = GameManager.Instance.player;
+
+        // For displaying lookup
+        // If facing down
+        if ((GameManager.Instance.GetCurrentState() == GameManager.GameState.FreeRoam || GameManager.Instance.GetCurrentState() == GameManager.GameState.MatchStarsMode) &&
+            (Vector3.Dot(currentPlayer.transform.forward, Vector3.down) > 0.3))
+        {
+            // if time to change visibility
+            if (_currentLookUpBlinkTime <= 0)
+            {
+                // Adjust blinks based upon active or inactive
+                if (lookUpPanel.activeSelf)
+                {
+                    lookUpPanel.SetActive(false);
+                    _currentLookUpBlinkTime = lookUpBlinkDelay * lookUpBlinkPortionUnvisible;
+                }
+                else
+                {
+                    lookUpPanel.SetActive(true);
+                    _currentLookUpBlinkTime = lookUpBlinkDelay;
+                }
+            }
+            _currentLookUpBlinkTime -= Time.deltaTime;
+        }
+        // If facing up
+        else
+        {
+            if (lookUpPanel.activeSelf)
+                lookUpPanel.SetActive(false);
+        }
+
+
+        // For displaying constellation screen
         if (constellationMatchItemId >= 0 && constellationMatchScreenPanel.activeInHierarchy)
         {
-            Vector3 newRotation = new Vector3(GameManager.Instance.player.transform.eulerAngles.x, GameManager.Instance.player.transform.eulerAngles.y, GameManager.Instance.player.transform.eulerAngles.z);
+            Vector3 newRotation = new Vector3(currentPlayer.transform.eulerAngles.x, GameManager.Instance.player.transform.eulerAngles.y, GameManager.Instance.player.transform.eulerAngles.z);
             constellationMatchScreenPanel.transform.rotation = Quaternion.Euler(newRotation);
             MusicManager.Instance.UpdateFindingDistanceMusic(ConstellationMatch, constellationMatchScreenPanel);
             if (ConstellationManager.IsMatchConstellation(ConstellationMatch, constellationMatchScreenPanel))

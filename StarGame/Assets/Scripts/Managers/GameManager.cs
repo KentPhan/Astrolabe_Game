@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    enum GameState
+    public enum GameState
     {
         Start,
         FreeRoam,
@@ -62,6 +62,9 @@ public class GameManager : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Goes to free roam.
+    /// </summary>
     public void GoToFreeRoam()
     {
         CanvasManager.Instance.ShowFreeRoam();
@@ -69,6 +72,9 @@ public class GameManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Goes to collection log.
+    /// </summary>
     public void GoToCollectionLog()
     {
         CanvasManager.Instance.ShowCollectionLog();
@@ -81,6 +87,11 @@ public class GameManager : MonoBehaviour
     {
         CanvasManager.Instance.ShowMatchMode(idInCostellationItemList);
         _currentState = GameState.MatchStarsMode;
+    }
+
+    public GameState GetCurrentState()
+    {
+        return _currentState;
     }
 
 

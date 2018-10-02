@@ -2,16 +2,11 @@
 using UnityEngine.UI;
 
 
-public class ConstellationsMenuManager : MonoBehaviour
+public class ConstellationMenu : MonoBehaviour
 {
-    public Button CloseButton;
     // Use this for initialization
     public ConstellationManager contellationManager;
     public Transform contentPanel;
-    void CloseMenu()
-    {
-        GameManager.Instance.GoToFreeRoam();
-    }
 
     public void activateConstellationMatch(int idInCostellationItemList)
     {
@@ -21,7 +16,6 @@ public class ConstellationsMenuManager : MonoBehaviour
 
     void Start()
     {
-        CloseButton.onClick.AddListener(CloseMenu);
         RefreshDisplay();
     }
 

@@ -29,6 +29,7 @@ public class CanvasManager : MonoBehaviour
     // Buttons
     public Button startGameButton;
     public Button openConsellationMenuButton;
+    public Button closeConstellationMenuButton;
 
     // Panels
     public GameObject startPanel;
@@ -74,6 +75,10 @@ public class CanvasManager : MonoBehaviour
         {
             GameManager.Instance.GoToCollectionLog();
         });
+        closeConstellationMenuButton.onClick.AddListener(() =>
+        {
+            GameManager.Instance.GoToFreeRoam();
+        });
     }
 
 
@@ -95,7 +100,7 @@ public class CanvasManager : MonoBehaviour
 
         // Show active panel
         collectionMenuPanel.SetActive(true);
-        collectionMenuPanel.GetComponent<ConstellationsMenuManager>().RefreshDisplay();
+        collectionMenuPanel.GetComponent<ConstellationMenu>().RefreshDisplay();
 
         // Stuff Im trying to figure out still
         constellationMatchDisplayInFocus.SetActive(false);

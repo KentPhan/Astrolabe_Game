@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class ConstellationsScrollViewButton : MonoBehaviour {
-    ConstellationsMenuManager menuManager;
+public class ConstellationsScrollViewButton : MonoBehaviour
+{
+    ConstellationMenu menuManager;
     public Button constellationButton;
     public Text descriptionLabel;
     public Text collectableLabel;
@@ -21,13 +20,14 @@ public class ConstellationsScrollViewButton : MonoBehaviour {
     }
 
 
-    void Start () {
+    void Start()
+    {
         constellationButton.onClick.AddListener(activateConstellation);
     }
 
 
     public void Setup(ConstellationItem currentItem,
-        ConstellationsMenuManager _menuManager, int idInContellationList)
+        ConstellationMenu _menuManager, int idInContellationList)
     {
         id = idInContellationList;
         source = currentItem;

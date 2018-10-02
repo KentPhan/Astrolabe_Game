@@ -939,13 +939,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22524236f5faa524db47f6670dd57b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  constellationMatchDisplayInFocus: {fileID: 1725706793209148}
   startGameButton: {fileID: 114693125145013328}
   openConsellationMenuButton: {fileID: 114384002089580288}
   closeConstellationMenuButton: {fileID: 114445693188232372}
   startPanel: {fileID: 1557478520430690}
   freeRoamPanel: {fileID: 1914062170080572}
   collectionMenuPanel: {fileID: 1568164780297760}
+  constellationMatchScreenPanel: {fileID: 1725706793209148}
   ConstellationMatch:
     name: 
     collectable: 0

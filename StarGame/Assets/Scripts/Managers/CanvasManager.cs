@@ -17,7 +17,7 @@ public class CanvasManager : MonoBehaviour
         }
     }
 
-    public GameObject constellationMatchDisplayInFocus;
+
 
     private Vector3 offset;
 
@@ -30,6 +30,7 @@ public class CanvasManager : MonoBehaviour
     public GameObject startPanel;
     public GameObject freeRoamPanel;
     public GameObject collectionMenuPanel;
+    public GameObject constellationMatchScreenPanel;
 
 
     // matching constellation
@@ -97,7 +98,7 @@ public class CanvasManager : MonoBehaviour
         collectionMenuPanel.GetComponent<ConstellationMenu>().RefreshDisplay();
 
         // Stuff Im trying to figure out still
-        constellationMatchDisplayInFocus.SetActive(false);
+        constellationMatchScreenPanel.SetActive(false);
     }
 
     public void ShowMatchMode(int i_matchId)
@@ -110,7 +111,7 @@ public class CanvasManager : MonoBehaviour
         {
             MusicManager.Instance.ChangeChannel("find");
 
-            constellationMatchDisplayInFocus.SetActive(true);
+            constellationMatchScreenPanel.SetActive(true);
         }
     }
 
@@ -118,13 +119,13 @@ public class CanvasManager : MonoBehaviour
     public void setConstellationMatch(int idInCostellationItemList)
     {
 
-        constellationMatchDisplayInFocus.SetActive(true);
+        constellationMatchScreenPanel.SetActive(true);
         MusicManager.Instance.ChangeChannel("find");
         Debug.Log("Enter set image! id:" + idInCostellationItemList);
         constellationMatchItemId = idInCostellationItemList;
         ConstellationMatch = ConstellationManager.Instance.constellationItemList[idInCostellationItemList];
-        constellationMatchDisplayInFocus.transform.GetComponentInChildren<Renderer>().material = ConstellationMatch.matchMaterial;
-        constellationMatchDisplayInFocus.transform.localScale = ConstellationMatch.scale;
+        constellationMatchScreenPanel.transform.GetComponentInChildren<Renderer>().material = ConstellationMatch.matchMaterial;
+        constellationMatchScreenPanel.transform.localScale = ConstellationMatch.scale;
     }
 
 
@@ -138,7 +139,7 @@ public class CanvasManager : MonoBehaviour
         ConstellationManager.Instance.constellationItemList[constellationMatchItemId].collectable = 0;
 
         // disable matching constellation in camera and set status to unavailable
-        constellationMatchDisplayInFocus.SetActive(false);
+        constellationMatchScreenPanel.SetActive(false);
         MusicManager.Instance.ChangeChannel("background");
         constellationMatchItemId = -1;
 
@@ -147,12 +148,12 @@ public class CanvasManager : MonoBehaviour
 
     private void Update()
     {
-        if (constellationMatchItemId >= 0 && constellationMatchDisplayInFocus.activeInHierarchy)
+        if (constellationMatchItemId >= 0 && constellationMatchScreenPanel.activeInHierarchy)
         {
             Vector3 newRotation = new Vector3(GameManager.Instance.player.transform.eulerAngles.x, GameManager.Instance.player.transform.eulerAngles.y, GameManager.Instance.player.transform.eulerAngles.z);
-            constellationMatchDisplayInFocus.transform.rotation = Quaternion.Euler(newRotation);
-            MusicManager.Instance.UpdateFindingDistanceMusic(ConstellationMatch, constellationMatchDisplayInFocus);
-            if (ConstellationManager.IsMatchConstellation(ConstellationMatch, constellationMatchDisplayInFocus))
+            constellationMatchScreenPanel.transform.rotation = Quaternion.Euler(newRotation);
+            MusicManager.Instance.UpdateFindingDistanceMusic(ConstellationMatch, constellationMatchScreenPanel);
+            if (ConstellationManager.IsMatchConstellation(ConstellationMatch, constellationMatchScreenPanel))
             {
                 matchTime += Time.deltaTime;
                 if (matchTime > 0.5)

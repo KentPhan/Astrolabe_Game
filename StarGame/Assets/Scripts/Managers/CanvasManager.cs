@@ -40,6 +40,7 @@ public class CanvasManager : MonoBehaviour
     public ConstellationManager constellationManager;
     public ConstellationItem constellationMatchItem;
     private int constellationMatchItemId = -1;
+    private float matchTime = 0.5f;
 
     private CanvasManager()
     {
@@ -90,6 +91,7 @@ public class CanvasManager : MonoBehaviour
     {
         // Deactivate other panels
         startPanel.SetActive(false);
+        freeRoamPanel.SetActive(false);
 
         // Show active panel
         collectionMenuPanel.SetActive(true);
@@ -103,10 +105,12 @@ public class CanvasManager : MonoBehaviour
     {
         // Deactivate other panels
         collectionMenuPanel.SetActive(false);
+        freeRoamPanel.SetActive(true);
 
         if (constellationMatchItemId >= 0)
         {
             MusicManager.Instance.ChangeChannel("find");
+
             constellationMatchDisplayInFocus.SetActive(true);
         }
     }
@@ -150,7 +154,15 @@ public class CanvasManager : MonoBehaviour
             constellationMatchDisplayInFocus.transform.rotation = Quaternion.Euler(newRotation);
             MusicManager.Instance.UpdateFindingDistanceMusic(constellationMatchItem, constellationMatchDisplayInFocus);
             if (ConstellationManager.IsMatchConstellation(constellationMatchItem, constellationMatchDisplayInFocus))
-                matchConstellation();
+            {
+                matchTime += Time.deltaTime;
+                if (matchTime > 0.5)
+                    matchConstellation();
+            }
+            else
+            {
+                matchTime = 0;
+            }
         }
     }
 

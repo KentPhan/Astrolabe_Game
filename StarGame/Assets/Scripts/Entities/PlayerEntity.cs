@@ -54,7 +54,7 @@ public class PlayerEntity : Entity
 
     void Update()
     {
-        if (control == ControllerScheme.Mouse)
+        if (control == ControllerScheme.Mouse || m_Gyro.enabled == false)
         {
             if (axes == RotationAxes.MouseXAndY)
             {

@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     private GameState _currentState = GameState.Start;
     private ObjectPool _currentPool;
     public GameObject poolObject;
-
+    public PlayerEntity player;
 
     private GameManager()
     {

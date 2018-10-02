@@ -52,3 +52,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolObject: {fileID: 1160783651685170, guid: cf480c5b7333f394c8427de07b8a938a, type: 2}
+  player: {fileID: 0}

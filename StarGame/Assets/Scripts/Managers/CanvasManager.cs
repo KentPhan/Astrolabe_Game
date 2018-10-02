@@ -17,12 +17,7 @@ public class CanvasManager : MonoBehaviour
         }
     }
 
-
-    public GameObject playerFocus;
     public GameObject constellationMatchDisplayInFocus;
-
-
-
 
     private Vector3 offset;
 
@@ -154,7 +149,7 @@ public class CanvasManager : MonoBehaviour
     {
         if (constellationMatchItemId >= 0 && constellationMatchDisplayInFocus.activeInHierarchy)
         {
-            Vector3 newRotation = new Vector3(playerFocus.transform.eulerAngles.x, playerFocus.transform.eulerAngles.y, playerFocus.transform.eulerAngles.z);
+            Vector3 newRotation = new Vector3(GameManager.Instance.player.transform.eulerAngles.x, GameManager.Instance.player.transform.eulerAngles.y, GameManager.Instance.player.transform.eulerAngles.z);
             constellationMatchDisplayInFocus.transform.rotation = Quaternion.Euler(newRotation);
             MusicManager.Instance.UpdateFindingDistanceMusic(ConstellationMatch, constellationMatchDisplayInFocus);
             if (ConstellationManager.IsMatchConstellation(ConstellationMatch, constellationMatchDisplayInFocus))

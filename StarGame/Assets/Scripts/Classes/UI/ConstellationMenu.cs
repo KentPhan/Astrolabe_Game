@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class ConstellationMenu : MonoBehaviour
 {
     // Use this for initialization
-    public ConstellationManager contellationManager;
     public Transform contentPanel;
 
     public void activateConstellationMatch(int idInCostellationItemList)
@@ -36,7 +35,7 @@ public class ConstellationMenu : MonoBehaviour
 
     private GameObject AddButton(int i)
     {
-        Constellation item = contellationManager.constellationItemList[i];
+        Constellation item = ConstellationManager.Instance.constellationItemList[i];
         GameObject newButton = GameManager.Instance.GetPool().GetObject();
         newButton.transform.SetParent(contentPanel, false);
 
@@ -51,14 +50,14 @@ public class ConstellationMenu : MonoBehaviour
         notCollectableColor.a = 0.3f;
         var collectableColor = Color.black;
         collectableColor.a = 0.3f;
-        for (int i = 0; i < contellationManager.constellationItemList.Count; i++)
-            if (contellationManager.constellationItemList[i].collectable == 1)
+        for (int i = 0; i < ConstellationManager.Instance.constellationItemList.Count; i++)
+            if (ConstellationManager.Instance.constellationItemList[i].collectable == 1)
             {
                 GameObject newButton = AddButton(i);
                 newButton.GetComponent<Image>().color = collectableColor;
             }
-        for (int i = 0; i < contellationManager.constellationItemList.Count; i++)
-            if (contellationManager.constellationItemList[i].collectable == 0)
+        for (int i = 0; i < ConstellationManager.Instance.constellationItemList.Count; i++)
+            if (ConstellationManager.Instance.constellationItemList[i].collectable == 0)
             {
                 GameObject newButton = AddButton(i);
                 newButton.GetComponent<Image>().color = notCollectableColor;

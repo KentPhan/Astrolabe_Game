@@ -939,7 +939,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22524236f5faa524db47f6670dd57b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerFocus: {fileID: 0}
   constellationMatchDisplayInFocus: {fileID: 1725706793209148}
   startGameButton: {fileID: 114693125145013328}
   openConsellationMenuButton: {fileID: 114384002089580288}
@@ -1273,7 +1272,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0501b68eae2a141adb62b5eed83f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contellationManager: {fileID: 0}
   contentPanel: {fileID: 224408296583560592}
 --- !u!114 &114863116006853330
 MonoBehaviour:

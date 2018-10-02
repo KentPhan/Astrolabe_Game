@@ -289,6 +289,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114745645300330102, guid: b3a415fb9d3540546892d69bb238b629,
+        type: 2}
+      propertyPath: control
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3a415fb9d3540546892d69bb238b629, type: 2}
   m_IsPrefabAsset: 0
@@ -615,6 +620,10 @@ Prefab:
       propertyPath: contellationManager
       value: 
       objectReference: {fileID: 1736268765}
+    - target: {fileID: 1725706793209148, guid: ad6a0410e9792d94c8f0e203e7fd8a8b, type: 2}
+      propertyPath: m_Name
+      value: ConstellationMatchScreen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad6a0410e9792d94c8f0e203e7fd8a8b, type: 2}
   m_IsPrefabAsset: 0

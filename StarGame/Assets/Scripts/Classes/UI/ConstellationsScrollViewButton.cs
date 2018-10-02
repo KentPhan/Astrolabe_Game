@@ -32,12 +32,20 @@ public class ConstellationsScrollViewButton : MonoBehaviour
         id = idInContellationList;
         source = current;
         menuManager = _menuManager;
-        descriptionLabel.text = source.name;
+
         constellationImage.sprite = source.icon;
         if (source.collectable == 1)
-            collectableLabel.text = "Avaiable";
+        {
+            descriptionLabel.text = "????";
+            collectableLabel.text = "Available";
+        }
+
         else
-            collectableLabel.text = "Unavaiable";
+        {
+            descriptionLabel.text = source.name;
+            collectableLabel.text = "Unavailable";
+        }
+
 
     }
 }

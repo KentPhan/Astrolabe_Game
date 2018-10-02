@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4247276379951404}
   - component: {fileID: 114627376620626266}
   m_Layer: 0
-  m_Name: ConstellationManagerPlane
+  m_Name: ConstellationManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

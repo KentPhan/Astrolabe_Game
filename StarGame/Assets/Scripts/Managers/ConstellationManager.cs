@@ -3,11 +3,41 @@ using UnityEngine;
 
 public class ConstellationManager : MonoBehaviour
 {
-    // Use this for initialization
+    private static ConstellationManager _instance = null;
 
+    public static ConstellationManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new ConstellationManager();
+            }
+            return _instance;
+        }
+    }
+
+    // Use this for initialization
     public GameObject constellationPrefab;
     public List<ConstellationItem> constellationItemList;
     // Update is called once per frame
+
+    private ConstellationManager()
+    {
+
+    }
+
+    private void Awake()
+    {
+        if (_instance == null)
+            _instance = this;
+        else if (_instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
 
     public static float constrainEulerAngle(float x)
     {

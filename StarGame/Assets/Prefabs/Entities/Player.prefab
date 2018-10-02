@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6f5a59e2f9e4e4c86b1de852df1be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  control: 0
+  control: 1
   playerCamera: {fileID: 20331785976776794}
   axes: 0
   wantedMode: 0
@@ -183,7 +183,7 @@ MonoBehaviour:
   minimumX: -360
   maximumX: 360
   minimumY: -60
-  maximumY: 60
+  maximumY: 120
 --- !u!136 &136776592570820142
 CapsuleCollider:
   m_ObjectHideFlags: 1

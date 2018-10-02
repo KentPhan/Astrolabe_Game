@@ -21,9 +21,9 @@ public class ConstellationManager : MonoBehaviour
     {
         //Debug.Log(displayItem.rotation.x - currentFocus.transform.rotation.x);
         //Debug.Log(Mathf.Abs(displayItem.rotation.x - currentFocus.transform.rotation.x));
-        if (Mathf.Abs(constrainEulerAngle(displayItem.eulerAngles.x) - constrainEulerAngle(currentFocus.transform.eulerAngles.x)) < 0.5f &&
-            Mathf.Abs(constrainEulerAngle(displayItem.eulerAngles.y) - constrainEulerAngle(currentFocus.transform.eulerAngles.y)) < 0.5f &&
-            Mathf.Abs(constrainEulerAngle(displayItem.eulerAngles.z) - constrainEulerAngle(currentFocus.transform.eulerAngles.z)) < 0.5f)
+        if (Mathf.Abs(constrainEulerAngle(displayItem.eulerAngles.x) - constrainEulerAngle(currentFocus.transform.eulerAngles.x)) < 2f &&
+            Mathf.Abs(constrainEulerAngle(displayItem.eulerAngles.y) - constrainEulerAngle(currentFocus.transform.eulerAngles.y)) < 2f &&
+            Mathf.Abs(constrainEulerAngle(displayItem.eulerAngles.z) - constrainEulerAngle(currentFocus.transform.eulerAngles.z)) < 2f)
             return true;
         return false;
     }

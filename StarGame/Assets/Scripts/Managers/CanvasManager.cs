@@ -40,6 +40,7 @@ public class CanvasManager : MonoBehaviour
 
     // matching constellation
     public Constellation ConstellationMatch;
+    private bool isAnimationOfConstellationMatch;
     private int constellationMatchItemId = -1;
     private float matchTime = 0.5f;
 
@@ -131,7 +132,9 @@ public class CanvasManager : MonoBehaviour
         Debug.Log("Enter set image! id:" + idInCostellationItemList);
         constellationMatchItemId = idInCostellationItemList;
         ConstellationMatch = ConstellationManager.Instance.constellationItemList[idInCostellationItemList];
-        constellationMatchScreenPanel.transform.GetComponentInChildren<Renderer>().material = ConstellationMatch.matchMaterial;
+        var newMaterial = constellationMatchScreenPanel.transform.GetComponentInChildren<Renderer>().materials;
+        newMaterial[0] = ConstellationMatch.matchMaterial;
+        constellationMatchScreenPanel.transform.GetComponentInChildren<Renderer>().materials = newMaterial;
         constellationMatchScreenPanel.transform.localScale = ConstellationMatch.scale;
     }
 
@@ -139,8 +142,6 @@ public class CanvasManager : MonoBehaviour
     void matchConstellation()
     {
         Debug.Log("Matching!");
-        // TODO: animation display
-
         // change status of constellation
         // set collectable to 0
         ConstellationManager.Instance.constellationItemList[constellationMatchItemId].collectable = 0;
@@ -195,15 +196,15 @@ public class CanvasManager : MonoBehaviour
             MusicManager.Instance.UpdateFindingDistanceMusic(ConstellationMatch, constellationMatchScreenPanel);
             if (ConstellationManager.IsMatchConstellation(ConstellationMatch, constellationMatchScreenPanel))
             {
-                matchTime += Time.deltaTime;
-                if (matchTime > 0.5)
+                ConstellationManager.Instance.constellationItemList[constellationMatchItemId].displayInMap.GetComponent<ConstellationDisplayItem>().isAnimated = true;
+                if (ConstellationManager.Instance.constellationItemList[constellationMatchItemId].displayInMap.GetComponent<ConstellationDisplayItem>().isCongratulation)
                     matchConstellation();
             }
             else
             {
-                matchTime = 0;
+                ConstellationManager.Instance.constellationItemList[constellationMatchItemId].displayInMap.GetComponent<ConstellationDisplayItem>().isAnimated = false;
             }
-        }
+        } 
     }
 
 }

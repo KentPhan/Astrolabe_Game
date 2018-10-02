@@ -72,10 +72,28 @@ public class ConstellationManager : MonoBehaviour
             constellationItemList[i].displayInMap.transform.parent = transform;
             constellationItemList[i].displayInMap.name =
                 constellationItemList[i].name;
+
+            var constellationDisplayItem = constellationItemList[i].displayInMap.GetComponent<ConstellationDisplayItem>();
+            constellationDisplayItem.FinishedMaterial = constellationItemList[i].finishedMaterial;
+            constellationDisplayItem.CongratulationMaterial = constellationItemList[i].congratulationMaterial;
+
+            if (constellationItemList[i].animation.Length > 0) {
+                constellationDisplayItem.hasAnimation = true;
+                constellationDisplayItem.isAnimated = false;
+                constellationDisplayItem.textures =
+                    constellationItemList[i].animation;
+            } else
+                constellationDisplayItem.hasAnimation = false;
+            
             // set display material
+            Debug.Log(constellationItemList[i].displayInMap.transform.
+                GetComponentInChildren<Renderer>().materials.Length);
+            var newMaterial = constellationItemList[i].displayInMap.transform.
+                GetComponentInChildren<Renderer>().materials;
+            newMaterial[0] = constellationItemList[i].displayMaterial;
             constellationItemList[i].displayInMap.transform.
-                GetComponentInChildren<Renderer>().material =
-                    constellationItemList[i].displayMaterial;
+                GetComponentInChildren<Renderer>().materials =
+                    newMaterial;
         }
 
     }

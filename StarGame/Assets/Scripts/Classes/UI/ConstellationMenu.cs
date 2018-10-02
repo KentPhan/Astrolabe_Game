@@ -33,7 +33,7 @@ public class ConstellationMenu : MonoBehaviour
         }
     }
 
-    private GameObject AddButton(int i)
+    private ConstellationsScrollViewButton AddButton(int i)
     {
         Constellation item = ConstellationManager.Instance.constellationItemList[i];
         GameObject newButton = GameManager.Instance.GetPool().GetObject();
@@ -41,7 +41,7 @@ public class ConstellationMenu : MonoBehaviour
 
         ConstellationsScrollViewButton sampleButton = newButton.GetComponent<ConstellationsScrollViewButton>();
         sampleButton.Setup(item, this, i);
-        return newButton;
+        return sampleButton;
     }
 
     private void AddButtons()
@@ -53,13 +53,14 @@ public class ConstellationMenu : MonoBehaviour
         for (int i = 0; i < ConstellationManager.Instance.constellationItemList.Count; i++)
             if (ConstellationManager.Instance.constellationItemList[i].collectable == 1)
             {
-                GameObject newButton = AddButton(i);
+                ConstellationsScrollViewButton newButton = AddButton(i);
                 newButton.GetComponent<Image>().color = collectableColor;
             }
         for (int i = 0; i < ConstellationManager.Instance.constellationItemList.Count; i++)
             if (ConstellationManager.Instance.constellationItemList[i].collectable == 0)
             {
-                GameObject newButton = AddButton(i);
+                ConstellationsScrollViewButton newButton = AddButton(i);
+                newButton.constellationImage.sprite = ConstellationManager.Instance.constellationItemList[i].finishedIcon;
                 newButton.GetComponent<Image>().color = notCollectableColor;
             }
 

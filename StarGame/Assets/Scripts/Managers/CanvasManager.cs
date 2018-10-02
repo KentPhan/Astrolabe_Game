@@ -63,6 +63,7 @@ public class CanvasManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        startPanel.SetActive(true);
         collectionMenuPanel.SetActive(false);
         lookUpPanel.SetActive(false);
         //constellationsPanel.canvasManager = this;

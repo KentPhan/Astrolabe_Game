@@ -331,8 +331,9 @@ GameObject:
   m_Component:
   - component: {fileID: 224726600101401842}
   - component: {fileID: 222317109090520282}
-  - component: {fileID: 114775386895840440}
   - component: {fileID: 114693125145013328}
+  - component: {fileID: 114482444166353084}
+  - component: {fileID: 114776490778313674}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -1028,6 +1029,38 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114482444166353084
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1608346634529110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adcb1951413374647b99942665ecdfe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textures:
+  - {fileID: 21300000, guid: 7e1f9842200eb8942b9660c7a60ab373, type: 3}
+  - {fileID: 21300000, guid: 4ef533eb6e4669e43a7126a8168edd77, type: 3}
+  - {fileID: 21300000, guid: 9dba3dbda1f76ae4c8e9004433c01999, type: 3}
+  - {fileID: 21300000, guid: 22ff8f98853de0a4594e3b1fe74e02c6, type: 3}
+  - {fileID: 21300000, guid: 861e13d902a59274abbc4c1ffb07a97c, type: 3}
+  - {fileID: 21300000, guid: 7970b67c8b5df2c4da942a76008bc11e, type: 3}
+  - {fileID: 21300000, guid: a5e0c6cb5e26dc94abc396b341c65d61, type: 3}
+  - {fileID: 21300000, guid: a1e3e0ef9983b6f449da3718a1a1355d, type: 3}
+  - {fileID: 21300000, guid: 86112f6cf35b5ef44be3eb6c6f7baa55, type: 3}
+  - {fileID: 21300000, guid: 8aafd43e82ed6854e94adc059c1151c5, type: 3}
+  - {fileID: 21300000, guid: 1faa3b05d00e97b4bb558f9dd5b27061, type: 3}
+  - {fileID: 21300000, guid: 7dc92aff459f9644b91500d579039602, type: 3}
+  - {fileID: 21300000, guid: 9dc0f068fac55e84b9fa456efa48531b, type: 3}
+  - {fileID: 21300000, guid: 2b95af22a0c30d746955e39c3e80a523, type: 3}
+  - {fileID: 21300000, guid: b3ea7d0dd35c88549bd79d1cc34148e8, type: 3}
+  - {fileID: 21300000, guid: b801f08c7fe47f240b59baf9366f8779, type: 3}
+  - {fileID: 21300000, guid: d86a23ec36380c3479d3dfbbd8883b2c, type: 3}
+  - {fileID: 21300000, guid: cb89f04715aad04488ad1171a525d33a, type: 3}
+  animatedGameObject: {fileID: 1608346634529110}
+  animationMaterial: {fileID: 0}
 --- !u!114 &114490120988569342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1308,7 +1341,7 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114775386895840440
+--- !u!114 &114776490778313674
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1319,7 +1352,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -1327,7 +1360,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2a8b0d8f93d4ec9479021418c0afbf2e, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2038,8 +2071,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -185.9}
-  m_SizeDelta: {x: 878, y: 474}
+  m_AnchoredPosition: {x: -42.12, y: -185.9}
+  m_SizeDelta: {x: 1150, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224759121016351778
 RectTransform:

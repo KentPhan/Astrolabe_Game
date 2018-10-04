@@ -51,9 +51,11 @@ public class ConstellationManager : MonoBehaviour
     {
         //Debug.Log(display.rotation.x - currentFocus.transform.rotation.x);
         //Debug.Log(Mathf.Abs(display.rotation.x - currentFocus.transform.rotation.x));
-        if (Mathf.Abs(constrainEulerAngle(display.eulerAngles.x) - constrainEulerAngle(currentFocus.transform.eulerAngles.x)) < 5f &&
-            Mathf.Abs(constrainEulerAngle(display.eulerAngles.y) - constrainEulerAngle(currentFocus.transform.eulerAngles.y)) < 5f &&
-            Mathf.Abs(constrainEulerAngle(display.eulerAngles.z) - constrainEulerAngle(currentFocus.transform.eulerAngles.z)) < 5f)
+
+        float distance = 180f;
+        if (Mathf.Abs(constrainEulerAngle(display.eulerAngles.x) - constrainEulerAngle(currentFocus.transform.eulerAngles.x)) < distance &&
+            Mathf.Abs(constrainEulerAngle(display.eulerAngles.y) - constrainEulerAngle(currentFocus.transform.eulerAngles.y)) < distance &&
+            Mathf.Abs(constrainEulerAngle(display.eulerAngles.z) - constrainEulerAngle(currentFocus.transform.eulerAngles.z)) < distance)
             return true;
         return false;
     }

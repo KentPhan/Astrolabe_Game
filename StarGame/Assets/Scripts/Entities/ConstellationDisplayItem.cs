@@ -64,7 +64,6 @@ public class ConstellationDisplayItem : MonoBehaviour {
             {
                 var newMaterials = this.GetComponentInChildren<Renderer>().materials;
                 var newMaterialColor = newMaterials[2].color;
-                Debug.Log(newMaterialColor);
                 newMaterialColor.a += alphaSpeed;
                 if (newMaterialColor.a >= 1)
                 {

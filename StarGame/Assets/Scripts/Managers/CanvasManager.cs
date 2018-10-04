@@ -210,9 +210,16 @@ public class CanvasManager : MonoBehaviour
             MusicManager.Instance.UpdateFindingDistanceMusic(ConstellationMatch, constellationMatchScreenPanel);
             if (ConstellationManager.IsMatchConstellation(ConstellationMatch, constellationMatchScreenPanel))
             {
-                ConstellationManager.Instance.constellationItemList[constellationMatchItemId].displayInMap.GetComponent<ConstellationDisplayItem>().isAnimated = true;
-                if (ConstellationManager.Instance.constellationItemList[constellationMatchItemId].displayInMap.GetComponent<ConstellationDisplayItem>().isCongratulation)
+                
+                if (ConstellationManager.Instance.constellationItemList[constellationMatchItemId].displayInMap.GetComponent<ConstellationDisplayItem>().hasAnimation)
+                {
+                    ConstellationManager.Instance.constellationItemList[constellationMatchItemId].displayInMap.GetComponent<ConstellationDisplayItem>().isAnimated = true;
+                    if (ConstellationManager.Instance.constellationItemList[constellationMatchItemId].displayInMap.GetComponent<ConstellationDisplayItem>().isCongratulation)
+                        matchConstellation();
+                } else
+                {
                     matchConstellation();
+                }
             }
             else
             {

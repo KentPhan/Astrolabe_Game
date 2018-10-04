@@ -37,7 +37,6 @@ public class DefaultAnimationForImage : MonoBehaviour {
 
         //Advance one frame  
         frameCounter = (++frameCounter) % textures.Length;
-        Debug.Log(frameCounter);
         //Stop this coroutine  
         animatedGameObject.GetComponent<Image>().sprite = textures[frameCounter];
         StopCoroutine("PlayLoop");

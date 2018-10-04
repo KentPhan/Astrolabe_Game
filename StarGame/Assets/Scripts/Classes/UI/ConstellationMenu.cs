@@ -46,8 +46,8 @@ public class ConstellationMenu : MonoBehaviour
 
     private void AddButtons()
     {
-        var notCollectableColor = Color.red;
-        notCollectableColor.a = 0.3f;
+        //var notCollectableColor = Color.red;
+        //notCollectableColor.a = 0.3f;
         var collectableColor = Color.black;
         collectableColor.a = 0.3f;
         for (int i = 0; i < ConstellationManager.Instance.constellationItemList.Count; i++)
@@ -61,7 +61,7 @@ public class ConstellationMenu : MonoBehaviour
             {
                 ConstellationsScrollViewButton newButton = AddButton(i);
                 newButton.constellationImage.sprite = ConstellationManager.Instance.constellationItemList[i].finishedIcon;
-                newButton.GetComponent<Image>().color = notCollectableColor;
+                //newButton.GetComponent<Image>().color = notCollectableColor;
             }
 
     }

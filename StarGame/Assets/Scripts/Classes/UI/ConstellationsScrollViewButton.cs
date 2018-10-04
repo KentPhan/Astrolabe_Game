@@ -7,6 +7,8 @@ public class ConstellationsScrollViewButton : MonoBehaviour
     public Button constellationButton;
     public Text descriptionLabel;
     public Text collectableLabel;
+    [Header("Constellation Border")]
+    public Image constellationBorder;
     [Header("Constellation Title Image")]
     public Image constellationTitleImage;
     public float titleWidth;
@@ -45,11 +47,14 @@ public class ConstellationsScrollViewButton : MonoBehaviour
 
 
 
+
+        // If it is collected or not
         if (source.collectable == 1)
         {
             descriptionLabel.text = "????";
             collectableLabel.text = "Available";
             constellationTitleImage.sprite = CanvasManager.Instance.UIUnknownConstellationTitle;
+            constellationBorder.sprite = CanvasManager.Instance.UIConstellationBlueBorder;
             constellationTitleImage.GetComponent<RectTransform>().sizeDelta = new Vector2(CanvasManager.Instance.UIUnknownConstellationTitle.rect.width, CanvasManager.Instance.UIUnknownConstellationTitle.rect.height);
         }
 
@@ -58,12 +63,12 @@ public class ConstellationsScrollViewButton : MonoBehaviour
             descriptionLabel.text = source.name;
             collectableLabel.text = "Unavailable";
             constellationTitleImage.sprite = source.UIConstellationTitle;
+            constellationBorder.sprite = CanvasManager.Instance.UIConstellationPurpleBorder;
             constellationTitleImage.GetComponent<RectTransform>().sizeDelta = new Vector2(source.UIConstellationTitle.rect.width, source.UIConstellationTitle.rect.height);
         }
 
 
         // Size constellation title images properly
-
         constellationTitleImage.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
 
 

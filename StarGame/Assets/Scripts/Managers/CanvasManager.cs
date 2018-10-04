@@ -21,12 +21,12 @@ public class CanvasManager : MonoBehaviour
 
     private Vector3 offset;
 
-    // Buttons
+    [Header("Buttons")]
     public Button startGameButton;
     public Button openConsellationMenuButton;
     public Button closeConstellationMenuButton;
 
-    // Panels
+    [Header("Panels")]
     public GameObject startPanel;
     public GameObject freeRoamPanel;
     public GameObject collectionMenuPanel;
@@ -35,14 +35,18 @@ public class CanvasManager : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float lookUpBlinkPortionUnvisible;
     private float _currentLookUpBlinkTime = 0.0f;
+
+    [Header("External References")]
     public GameObject constellationMatchScreenPanel; // Very different. A sphere that sits outside in world space and rotates to display constellations
 
 
-    // Placeholder Images
+    [Header("Placeholder Images")]
     public Sprite UIUnknownConstellationTitle;
+    public Sprite UIConstellationPurpleBorder;
+    public Sprite UIConstellationBlueBorder;
 
 
-    // matching constellation
+    [Header("Matching Constellations")]
     public Constellation ConstellationMatch;
     private bool isAnimationOfConstellationMatch;
     private int constellationMatchItemId = -1;

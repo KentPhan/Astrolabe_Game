@@ -14,6 +14,7 @@ public class Constellation
     public Material congratulationMaterial;
     public Material finishedMaterial;
     public Sprite UIConstellationTitle;
+    public string ConstellationTitleText; 
 
     public GameObject displayInMap;
 

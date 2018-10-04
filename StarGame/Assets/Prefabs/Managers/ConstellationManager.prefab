@@ -67,6 +67,8 @@ MonoBehaviour:
     finishedMaterial: {fileID: 2100000, guid: 272f84df6af127d468d1b20b8ff95cdc, type: 2}
     UIConstellationTitle: {fileID: 21300000, guid: a580bee93923ff245b11a5f3d6960627,
       type: 3}
+    ConstellationTitleText: 'The Fearsome Bull\nTaurus charges through the northern
+      winter sky, locked in constant battle with Orion. '
     displayInMap: {fileID: 0}
     animation:
     - {fileID: 2800000, guid: b37dcd7d992efdd4e89d2051df6c0b60, type: 3}
@@ -145,6 +147,8 @@ MonoBehaviour:
     finishedMaterial: {fileID: 2100000, guid: da4134b42a088ed45a4cfcfe35ccef1b, type: 2}
     UIConstellationTitle: {fileID: 21300000, guid: 9fa4fabff2a6e6442b8d973003d5938a,
       type: 3}
+    ConstellationTitleText: Laelaps, The Big Dog\nOrion's loyal dog always backs him
+      up. An ever vigilant watcher and protector of Europa.
     displayInMap: {fileID: 0}
     animation:
     - {fileID: 2800000, guid: fe6f21d99fa127c4f8ec1fa7d584725f, type: 3}
@@ -223,6 +227,8 @@ MonoBehaviour:
     finishedMaterial: {fileID: 2100000, guid: 7d1e217ce532fd0419d4d305197fb100, type: 2}
     UIConstellationTitle: {fileID: 21300000, guid: 6d6d4691f786ff14c94691904a35f978,
       type: 3}
+    ConstellationTitleText: Orion's Smaller Dog\nHe may be small in size, but he's
+      big in spirit. Just like Laelaps, he always sticks with Orion.
     displayInMap: {fileID: 0}
     animation:
     - {fileID: 2800000, guid: 9eb5b403ffb0d7146b6bd44d52f3de21, type: 3}
@@ -301,6 +307,8 @@ MonoBehaviour:
     finishedMaterial: {fileID: 2100000, guid: efbe9e81985cdcd4db4b72610800caef, type: 2}
     UIConstellationTitle: {fileID: 21300000, guid: b148ff7992c825f48baec334d7d40cad,
       type: 3}
+    ConstellationTitleText: The Great Hunter\nHe may be small in size, but he's big
+      in spirit. Just like Laelaps, he always sticks with Orion.
     displayInMap: {fileID: 0}
     animation:
     - {fileID: 2800000, guid: c6fbd81695e38ab4981707842805fcf7, type: 3}

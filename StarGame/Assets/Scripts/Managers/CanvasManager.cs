@@ -81,14 +81,17 @@ public class CanvasManager : MonoBehaviour
         startGameButton.onClick.AddListener(() =>
         {
             GameManager.Instance.GoToFreeRoam();
+            MusicManager.Instance.PlaySoundEffect("button_click");
         });
         openConsellationMenuButton.onClick.AddListener(() =>
         {
             GameManager.Instance.GoToCollectionLog();
+            MusicManager.Instance.PlaySoundEffect("button_click");
         });
         closeConstellationMenuButton.onClick.AddListener(() =>
         {
             GameManager.Instance.GoToFreeRoam();
+            MusicManager.Instance.PlaySoundEffect("button_click");
         });
     }
 
@@ -125,7 +128,7 @@ public class CanvasManager : MonoBehaviour
 
         if (constellationMatchItemId >= 0)
         {
-            MusicManager.Instance.ChangeChannel("find");
+            MusicManager.Instance.ChangeChannel("playing_find");
 
             constellationMatchScreenPanel.SetActive(true);
         }
@@ -136,7 +139,7 @@ public class CanvasManager : MonoBehaviour
     {
 
         constellationMatchScreenPanel.SetActive(true);
-        MusicManager.Instance.ChangeChannel("find");
+        MusicManager.Instance.ChangeChannel("playing_find");
         Debug.Log("Enter set image! id:" + idInCostellationItemList);
         constellationMatchItemId = idInCostellationItemList;
         ConstellationMatch = ConstellationManager.Instance.constellationItemList[idInCostellationItemList];
@@ -152,11 +155,12 @@ public class CanvasManager : MonoBehaviour
         Debug.Log("Matching!");
         // change status of constellation
         // set collectable to 0
+        MusicManager.Instance.PlaySoundEffect("success");
         ConstellationManager.Instance.constellationItemList[constellationMatchItemId].collectable = 0;
 
         // disable matching constellation in camera and set status to unavailable
         constellationMatchScreenPanel.SetActive(false);
-        MusicManager.Instance.ChangeChannel("background");
+        MusicManager.Instance.ChangeChannel("playing_background");
         constellationMatchItemId = -1;
 
 

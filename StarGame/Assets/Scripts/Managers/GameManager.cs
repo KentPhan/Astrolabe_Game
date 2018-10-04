@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void GoToFreeRoam()
     {
+        MusicManager.Instance.ChangeChannel("playing_default");
         CanvasManager.Instance.ShowFreeRoam();
         _currentState = GameState.FreeRoam;
 
@@ -78,13 +79,14 @@ public class GameManager : MonoBehaviour
     public void GoToCollectionLog()
     {
         CanvasManager.Instance.ShowCollectionLog();
-        MusicManager.Instance.ChangeChannel("menu");
+        MusicManager.Instance.ChangeChannel("playing_menu");
         _currentState = GameState.CollectionLog;
     }
 
 
     public void GoToMatchStarsMode(int idInCostellationItemList)
     {
+        MusicManager.Instance.ChangeChannel("playing_find");
         CanvasManager.Instance.ShowMatchMode(idInCostellationItemList);
         _currentState = GameState.MatchStarsMode;
     }

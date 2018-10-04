@@ -24,6 +24,7 @@ public class ConstellationsScrollViewButton : MonoBehaviour
         if (source.collectable == 1)
         {
             menuManager.activateConstellationMatch(id);
+            MusicManager.Instance.PlaySoundEffect("button_click");
         }
     }
 

@@ -19,10 +19,13 @@ public class MusicManager : MonoBehaviour
     }
 
 
-    public AudioMixerSnapshot menu;
-    public AudioMixerSnapshot find;
-    public AudioMixerSnapshot background;
-    public AudioMixerSnapshot match;
+    public AudioMixerSnapshot Playing_Default;
+    public AudioMixerSnapshot Playing_Match;
+    public AudioMixerSnapshot Start_Default;
+
+    public GameObject buttonClickSound;
+    public GameObject successSound;
+
     public GameObject findMusicCollection;
     public float bpm = 128;
 
@@ -32,6 +35,10 @@ public class MusicManager : MonoBehaviour
     private MusicManager()
     {
 
+    }
+    void PlaySound(GameObject playingSound)
+    {
+        playingSound.GetComponent<AudioSource>().Play();
     }
 
     private void Awake()
@@ -50,7 +57,7 @@ public class MusicManager : MonoBehaviour
     {
         m_QuarterNote = 60 / bpm;
         m_TransitionIn = m_QuarterNote;
-        find.TransitionTo(m_TransitionIn);
+        Start_Default.TransitionTo(m_TransitionIn);
     }
 
     // Use this for initialization
@@ -66,13 +73,24 @@ public class MusicManager : MonoBehaviour
     {
         switch (channel)
         {
-            case "find": find.TransitionTo(m_TransitionIn); break;
-            case "menu": menu.TransitionTo(m_TransitionIn); break;
-            case "background": background.TransitionTo(m_TransitionIn); break;
-            case "match": match.TransitionTo(m_TransitionIn); break;
+            case "start": Start_Default.TransitionTo(m_TransitionIn); break;
+            case "playing_find": Playing_Match.TransitionTo(m_TransitionIn); break;
+            case "playing_menu": Playing_Default.TransitionTo(m_TransitionIn); break;
+            case "playing_background": Playing_Default.TransitionTo(m_TransitionIn); break;
+            case "playing_default": Playing_Default.TransitionTo(m_TransitionIn); break;
         }
-
     }
+
+
+    public void PlaySoundEffect(string soundName)
+    {
+        Debug.Log(soundName);
+        switch (soundName)
+        {
+            case "button_click": PlaySound(buttonClickSound); break;
+            case "success": PlaySound(successSound); break;
+        }
+    } 
 
     bool lessThanDistance(Constellation display, GameObject currentFocus, float distance)
     {
@@ -94,11 +112,11 @@ public class MusicManager : MonoBehaviour
         {
             beat.mute = false;
             if (lessThanDistance(display, currentFocus, distanceC))
-                beat.pitch = 2f;
+                beat.pitch = 2.5f;
             else if (lessThanDistance(display, currentFocus, distanceB))
-                beat.pitch = 1.5f;
+                beat.pitch = 2f;
             else
-                beat.pitch = 1f;
+                beat.pitch = 1.5f;
         }
         else
         {

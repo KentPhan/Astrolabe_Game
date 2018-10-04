@@ -567,16 +567,6 @@ Prefab:
       propertyPath: constellationMatchScreenPanel
       value: 
       objectReference: {fileID: 1437730816}
-    - target: {fileID: 224849555877024344, guid: ad6a0410e9792d94c8f0e203e7fd8a8b,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -52.80011
-      objectReference: {fileID: 0}
-    - target: {fileID: 114564012311677840, guid: ad6a0410e9792d94c8f0e203e7fd8a8b,
-        type: 2}
-      propertyPath: m_PreserveAspect
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad6a0410e9792d94c8f0e203e7fd8a8b, type: 2}
   m_IsPrefabAsset: 0

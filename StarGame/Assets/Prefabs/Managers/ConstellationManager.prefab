@@ -56,46 +56,238 @@ MonoBehaviour:
   constellationItemList:
   - name: Traurus
     collectable: 1
-    eulerAngles: {x: -65.659, y: 39.166, z: -30.815}
+    eulerAngles: {x: -69.8, y: 71.2, z: -63.5}
     scale: {x: 5, y: 5, z: 1}
-    icon: {fileID: 21300000, guid: 967499fce9d2a5441a2c9b8444f380e6, type: 3}
-    finishedIcon: {fileID: 21300000, guid: 967499fce9d2a5441a2c9b8444f380e6, type: 3}
-    matchMaterial: {fileID: 2100000, guid: dc348527722faa748b604e35b4583559, type: 2}
+    icon: {fileID: 21300000, guid: c8cc40128f087ab43981970b3799b93d, type: 3}
+    finishedIcon: {fileID: 21300000, guid: d8338a39d22674443ab62204158e8964, type: 3}
+    matchMaterial: {fileID: 2100000, guid: 449d33312a5cd784fa4a69f4db38015b, type: 2}
     displayMaterial: {fileID: 2100000, guid: dc348527722faa748b604e35b4583559, type: 2}
-    congratulationMaterial: {fileID: 0}
-    finishedMaterial: {fileID: 0}
+    congratulationMaterial: {fileID: 2100000, guid: bb273b81db8cd704c884c6676e3b14bf,
+      type: 2}
+    finishedMaterial: {fileID: 2100000, guid: 272f84df6af127d468d1b20b8ff95cdc, type: 2}
     UIConstellationTitle: {fileID: 21300000, guid: a580bee93923ff245b11a5f3d6960627,
       type: 3}
     displayInMap: {fileID: 0}
-    animation: []
+    animation:
+    - {fileID: 2800000, guid: b37dcd7d992efdd4e89d2051df6c0b60, type: 3}
+    - {fileID: 2800000, guid: 415f42adff04cd64c972b22eb28f37d4, type: 3}
+    - {fileID: 2800000, guid: 89ca65a776b6a344bb78253306427af3, type: 3}
+    - {fileID: 2800000, guid: 2c4af9c52f1955f468c0ce695e2b86fb, type: 3}
+    - {fileID: 2800000, guid: ff0f48eceee0fb14fbcdc10bafda8295, type: 3}
+    - {fileID: 2800000, guid: 75bdb7afa0a83ab41b4da7f01f62e865, type: 3}
+    - {fileID: 2800000, guid: e2b5216cc75acde48b74059a74ca46c5, type: 3}
+    - {fileID: 2800000, guid: c53770d7108b46a4c889399b137bce65, type: 3}
+    - {fileID: 2800000, guid: 58ea7ef5949809047840834afc3ad81e, type: 3}
+    - {fileID: 2800000, guid: 6e227fa160d54f24cb021442baa1da0b, type: 3}
+    - {fileID: 2800000, guid: 087103355f80cf64c85f84726639dea6, type: 3}
+    - {fileID: 2800000, guid: 5955879c211a5b547bb94a492aaa2d89, type: 3}
+    - {fileID: 2800000, guid: 543fcc95a41bcff42b1521d572372fe4, type: 3}
+    - {fileID: 2800000, guid: 5a8e0519b5dccf74c82ec085944f0560, type: 3}
+    - {fileID: 2800000, guid: 7c2e1f6f2e2c16143acf36e60c3c410e, type: 3}
+    - {fileID: 2800000, guid: 5378ba5372a3b484e9d219f3127dceaf, type: 3}
+    - {fileID: 2800000, guid: 41ebe6eb17f052346971c8de9548a9b8, type: 3}
+    - {fileID: 2800000, guid: ecf50becfaa027d4a921f6f59ac9bf4c, type: 3}
+    - {fileID: 2800000, guid: 50e1fb5bc7d2ad94eb484a0f3a3c7b3d, type: 3}
+    - {fileID: 2800000, guid: 6b192fcddbda9cd46bcee560ac237ed1, type: 3}
+    - {fileID: 2800000, guid: cf9d5db2bc5cfe04aa6477a4dda42921, type: 3}
+    - {fileID: 2800000, guid: 9436c46991da0f04a895a904428e8f35, type: 3}
+    - {fileID: 2800000, guid: 5a64efab978ddb049a0a202943c4a44d, type: 3}
+    - {fileID: 2800000, guid: 2ebaa86cc4e8b064fba901b1ed30e480, type: 3}
+    - {fileID: 2800000, guid: 801aa47e5906bf04fb8bee78e1f924cf, type: 3}
+    - {fileID: 2800000, guid: 9fd1cac838600c94a8e3f3dc29a12907, type: 3}
+    - {fileID: 2800000, guid: 02f42578fa20d2a478e0a58e116ca232, type: 3}
+    - {fileID: 2800000, guid: 3fedbcfcdd04d414d9a4fb1d6d677937, type: 3}
+    - {fileID: 2800000, guid: 37d63722d27eea1489e801a531948a7c, type: 3}
+    - {fileID: 2800000, guid: c066fe5a8cd64cb4d9fbef7ad13282ac, type: 3}
+    - {fileID: 2800000, guid: 4ad4c43e7d325ac48b6155868e93a03e, type: 3}
+    - {fileID: 2800000, guid: 5a2e1d31aba0ff443b5b3bacf925bd55, type: 3}
+    - {fileID: 2800000, guid: 001dea48bcab37747b1088baf106c069, type: 3}
+    - {fileID: 2800000, guid: f961bc0ba5d9bd940966b6f3c9307b5f, type: 3}
+    - {fileID: 2800000, guid: 8b6059d478834f146b252ad4b2c90081, type: 3}
+    - {fileID: 2800000, guid: ad46a71632aaada499607ea1b453ccce, type: 3}
+    - {fileID: 2800000, guid: 347c35d07495ab34795733664855f396, type: 3}
+    - {fileID: 2800000, guid: 136d4048234690f42a271eafde2c9b34, type: 3}
+    - {fileID: 2800000, guid: 6c03f0d822a406f46850d1eaafd1de39, type: 3}
+    - {fileID: 2800000, guid: 8bcc21194c46992418ba944fe0709639, type: 3}
+    - {fileID: 2800000, guid: d165646f8979d39469e3e08440633648, type: 3}
+    - {fileID: 2800000, guid: a24496f1706dec140bdd913f3ed79c44, type: 3}
+    - {fileID: 2800000, guid: 95849dce75913f541ba9c7ffc0dbdb59, type: 3}
+    - {fileID: 2800000, guid: aa545fab32180b9478ee6554db774649, type: 3}
+    - {fileID: 2800000, guid: 2fde6057d41c8ac4ea11f78ecfa6a12e, type: 3}
+    - {fileID: 2800000, guid: 740d68a78863577428e52dcf8fb78d75, type: 3}
+    - {fileID: 2800000, guid: 3fb3a5edf063e8d4bbdfa107af67608a, type: 3}
+    - {fileID: 2800000, guid: d12e92020df1517438974bc73aae5589, type: 3}
+    - {fileID: 2800000, guid: b5a76a58ff7f10b43becbf655c0fd6a3, type: 3}
+    - {fileID: 2800000, guid: 83747a33961447a4eb594b5216eac415, type: 3}
+    - {fileID: 2800000, guid: b71cfb5a0f5c78844ab44c67640b9be8, type: 3}
+    - {fileID: 2800000, guid: 3814ddef61a3e5e4c983a972f974588d, type: 3}
+    - {fileID: 2800000, guid: a7091328a13035a4da42815c6ad4036c, type: 3}
+    - {fileID: 2800000, guid: c4852bc3d5fbbdc47b092a269c732adb, type: 3}
+    - {fileID: 2800000, guid: ff67ed7173c80ad44a5f78b869a5220e, type: 3}
+    - {fileID: 2800000, guid: 6dfb24732bdc6f34c96f9e09c042be71, type: 3}
+    - {fileID: 2800000, guid: f30afbf1b15ddf345a16ac56f5df8025, type: 3}
+    - {fileID: 2800000, guid: d1daf18c49392c44cafb323eeb534364, type: 3}
+    - {fileID: 2800000, guid: 54b5236f002c0ff4a9f081cdf4c0a0da, type: 3}
+    - {fileID: 2800000, guid: cf131716d5950204095b44125b046742, type: 3}
+    - {fileID: 2800000, guid: 90f71136a4279014ebe3c2e4a40503b4, type: 3}
+    - {fileID: 2800000, guid: 5e305bf1df9a02b4f9fc0ba254183183, type: 3}
+    - {fileID: 2800000, guid: 5d7c6ce2f0df424458ef18ba039638e0, type: 3}
   - name: CanisMajor
     collectable: 1
-    eulerAngles: {x: -32.955, y: -32.336, z: 15.698}
+    eulerAngles: {x: -29.6, y: -39.9, z: 15.698}
     scale: {x: 5, y: 5, z: 1}
-    icon: {fileID: 21300000, guid: c5c61601f2c36cf489e417d1e48903db, type: 3}
-    finishedIcon: {fileID: 21300000, guid: c5c61601f2c36cf489e417d1e48903db, type: 3}
-    matchMaterial: {fileID: 2100000, guid: 9320e4b316222a54c9f719718950b8a8, type: 2}
+    icon: {fileID: 21300000, guid: e42069142ab377440884365c4cb2fcdd, type: 3}
+    finishedIcon: {fileID: 21300000, guid: 13f88a05e43e52a46bb9355b6c1aa00b, type: 3}
+    matchMaterial: {fileID: 2100000, guid: 1f4f4b0aa93b4dc4d926d9794adb3274, type: 2}
     displayMaterial: {fileID: 2100000, guid: 9320e4b316222a54c9f719718950b8a8, type: 2}
-    congratulationMaterial: {fileID: 0}
-    finishedMaterial: {fileID: 0}
+    congratulationMaterial: {fileID: 2100000, guid: bf48f1b2b27fae3449b9af9e138565fa,
+      type: 2}
+    finishedMaterial: {fileID: 2100000, guid: da4134b42a088ed45a4cfcfe35ccef1b, type: 2}
     UIConstellationTitle: {fileID: 21300000, guid: 9fa4fabff2a6e6442b8d973003d5938a,
       type: 3}
     displayInMap: {fileID: 0}
-    animation: []
+    animation:
+    - {fileID: 2800000, guid: fe6f21d99fa127c4f8ec1fa7d584725f, type: 3}
+    - {fileID: 2800000, guid: 788989ebec9d5bf4385e285646aaa145, type: 3}
+    - {fileID: 2800000, guid: 8380c9b90a9aec444b967dd11905e04e, type: 3}
+    - {fileID: 2800000, guid: b317c16a14618414fa5901c32ca3ed44, type: 3}
+    - {fileID: 2800000, guid: 11ee893242a899940a7b48e926913438, type: 3}
+    - {fileID: 2800000, guid: b7519618706a45f47a7f876dc03b2c29, type: 3}
+    - {fileID: 2800000, guid: d7aee95300c023b44aadc0643e8a0bfc, type: 3}
+    - {fileID: 2800000, guid: 9ccb0a9e97d599541a96408d385adcd2, type: 3}
+    - {fileID: 2800000, guid: f7733ec4511ab6247a57f7ad6c06a8fc, type: 3}
+    - {fileID: 2800000, guid: 9c55e8c94ecac0447b8e971a0e4a8976, type: 3}
+    - {fileID: 2800000, guid: 5989c20986b45cf40a77050cf375f5c9, type: 3}
+    - {fileID: 2800000, guid: fba22981ec4f1ff4ab09fa09c0a0feaa, type: 3}
+    - {fileID: 2800000, guid: b125895a466222743b96f6baa8f5005a, type: 3}
+    - {fileID: 2800000, guid: df7e43c32de4f1d47997b2c9aae07d5d, type: 3}
+    - {fileID: 2800000, guid: 9ca181999363dad4fb20981833fd895e, type: 3}
+    - {fileID: 2800000, guid: cecf37c916c2e3e4db8def4f8e8fc9b8, type: 3}
+    - {fileID: 2800000, guid: a62087157738d3f44aff8a023a68934f, type: 3}
+    - {fileID: 2800000, guid: 295ff68e03289cc4e91202220c7d14db, type: 3}
+    - {fileID: 2800000, guid: d389a1cf14d71d942bd9c251dafcc841, type: 3}
+    - {fileID: 2800000, guid: 4de1a0aadc236494685b323a4bdafd0e, type: 3}
+    - {fileID: 2800000, guid: 21dc21ba4e8f0db4b87ac7e41fb6daab, type: 3}
+    - {fileID: 2800000, guid: c426dc5faace2d8488bab36e027bc158, type: 3}
+    - {fileID: 2800000, guid: a59d10cd5b2fb2a4390db65868b955de, type: 3}
+    - {fileID: 2800000, guid: 6560228c5476b0e428c9b07849b62a07, type: 3}
+    - {fileID: 2800000, guid: fcd957d29c42dd741af6e267fe165a42, type: 3}
+    - {fileID: 2800000, guid: 3c1376145d9a0274589cdd7830961cda, type: 3}
+    - {fileID: 2800000, guid: 2ecc18b8cce13044bb872e7ea97d0301, type: 3}
+    - {fileID: 2800000, guid: cf61554b9796d5641b6f8daefe06917b, type: 3}
+    - {fileID: 2800000, guid: 4adc45659a1f01f4f90281c191a57e92, type: 3}
+    - {fileID: 2800000, guid: 7738e446c6841ea4592adfe3ff8028de, type: 3}
+    - {fileID: 2800000, guid: 2bccd6004e60b194790981aafa7b6b2d, type: 3}
+    - {fileID: 2800000, guid: 17c401cce95198b46b32d03be408aa22, type: 3}
+    - {fileID: 2800000, guid: a20229f5a4550ad46b24282d974bb8ac, type: 3}
+    - {fileID: 2800000, guid: c47b54830e9d9494396dfdfc324d5558, type: 3}
+    - {fileID: 2800000, guid: 18b11cbc6669ce74abf696a0667dc42b, type: 3}
+    - {fileID: 2800000, guid: 8b40448de2c6bea468dfca084d206481, type: 3}
+    - {fileID: 2800000, guid: c9b67e7bc6091c9479296341e6790903, type: 3}
+    - {fileID: 2800000, guid: 17aa10d8e96e0504b8f5925b259c5c0f, type: 3}
+    - {fileID: 2800000, guid: 24b97f0fa09282b478478fabaccd332e, type: 3}
+    - {fileID: 2800000, guid: 0da8f0d6848d7ad46bdafe71008c9d37, type: 3}
+    - {fileID: 2800000, guid: 0637b17a8ae5e1d4da9ac7f5f661f45b, type: 3}
+    - {fileID: 2800000, guid: 0c43ea23d25562a418a465a266b8cf60, type: 3}
+    - {fileID: 2800000, guid: 050d7c26625f4d347a04efb7cf1ea9b3, type: 3}
+    - {fileID: 2800000, guid: 0703e076708de4c45ab0fd09c5ffc73f, type: 3}
+    - {fileID: 2800000, guid: a1eec29f322ccfa43b9930eaa9ea3670, type: 3}
+    - {fileID: 2800000, guid: e46a89e2c9bb4ce41b26055424d4953a, type: 3}
+    - {fileID: 2800000, guid: a0a3d44738019814aba1044b2e4d978f, type: 3}
+    - {fileID: 2800000, guid: 26ae073177a371b49be407fbccf4176f, type: 3}
+    - {fileID: 2800000, guid: 1faa8687f582a4a4bbc7710ff6f5841b, type: 3}
+    - {fileID: 2800000, guid: a903503199a6b964dbeaf6c209e730f3, type: 3}
+    - {fileID: 2800000, guid: a8f4986810a81b84ea60bbd016b24626, type: 3}
+    - {fileID: 2800000, guid: 890bc225031473a4c8c51eb583bcfa73, type: 3}
+    - {fileID: 2800000, guid: ba191b1791ae12e4bbf43a2c5af19ad9, type: 3}
+    - {fileID: 2800000, guid: 805870e0fba936840ac3ea2c92b3302e, type: 3}
+    - {fileID: 2800000, guid: e24685057b6214648bed2e27d45c7ac2, type: 3}
+    - {fileID: 2800000, guid: f630c3cf002664e4190850540ee8d44d, type: 3}
+    - {fileID: 2800000, guid: ee2d0a59068057b4992b60174c14d34d, type: 3}
+    - {fileID: 2800000, guid: 885b87a4ae6b2814fbd10e828ee4f7ae, type: 3}
+    - {fileID: 2800000, guid: c8fd08a0d0317ba4ab543f1a9af88691, type: 3}
+    - {fileID: 2800000, guid: 45da00358de65184ab7a923b48cccec8, type: 3}
+    - {fileID: 2800000, guid: ffdb14c96ee55344795e402e2b7a436e, type: 3}
+    - {fileID: 2800000, guid: 1f88952f8977f644593dfdaf1ebf53b1, type: 3}
+    - {fileID: 2800000, guid: 56922a7c1000860488a2666cb8191b4b, type: 3}
   - name: CanisMionor
     collectable: 1
-    eulerAngles: {x: -50.66, y: -54.114, z: 28.063}
+    eulerAngles: {x: -48.7, y: -91.1, z: 42.8}
     scale: {x: 5, y: 5, z: 1}
-    icon: {fileID: 21300000, guid: d48db6df00132e1418385b3efe347de7, type: 3}
-    finishedIcon: {fileID: 21300000, guid: d48db6df00132e1418385b3efe347de7, type: 3}
-    matchMaterial: {fileID: 2100000, guid: fb50e57330bde5a42a8f49a2487a6efe, type: 2}
+    icon: {fileID: 21300000, guid: b7eed248fcf9e9b47b3ec0ceacd5091d, type: 3}
+    finishedIcon: {fileID: 21300000, guid: 4d206f846a47115418fe2ea998529f46, type: 3}
+    matchMaterial: {fileID: 2100000, guid: 55036c73849027d488a9348dd2aa0b0f, type: 2}
     displayMaterial: {fileID: 2100000, guid: fb50e57330bde5a42a8f49a2487a6efe, type: 2}
-    congratulationMaterial: {fileID: 0}
-    finishedMaterial: {fileID: 0}
+    congratulationMaterial: {fileID: 2100000, guid: 3b1ccd7d0a6fcba46a9dd2fe5b337ed3,
+      type: 2}
+    finishedMaterial: {fileID: 2100000, guid: 7d1e217ce532fd0419d4d305197fb100, type: 2}
     UIConstellationTitle: {fileID: 21300000, guid: 6d6d4691f786ff14c94691904a35f978,
       type: 3}
     displayInMap: {fileID: 0}
-    animation: []
+    animation:
+    - {fileID: 2800000, guid: 9eb5b403ffb0d7146b6bd44d52f3de21, type: 3}
+    - {fileID: 2800000, guid: 823ef3369d431734f97235847c2ece0b, type: 3}
+    - {fileID: 2800000, guid: 947319c7942695d40807cf90d7716a50, type: 3}
+    - {fileID: 2800000, guid: f9e5e054812b6c74a8bb5e2f88cb4ccd, type: 3}
+    - {fileID: 2800000, guid: 933fec54cc6495f44b1df6fbff747835, type: 3}
+    - {fileID: 2800000, guid: 54ac556f834117245b9f7a260d67954a, type: 3}
+    - {fileID: 2800000, guid: 4834132d8e8434e47b87ae875d188fb3, type: 3}
+    - {fileID: 2800000, guid: cad32b695d2e7794882779093ecf2cdf, type: 3}
+    - {fileID: 2800000, guid: 5d11019d5353d274083b761ba6cdd99e, type: 3}
+    - {fileID: 2800000, guid: eb1ba54eac1f6654281023fd5c923a2c, type: 3}
+    - {fileID: 2800000, guid: d67d706c7df9ddb4b99f9fa7a49de20f, type: 3}
+    - {fileID: 2800000, guid: 72ece6e26b5affd47b910213de1f14c2, type: 3}
+    - {fileID: 2800000, guid: 321081a735d097b4cbbdc012cce95720, type: 3}
+    - {fileID: 2800000, guid: 4cda1f28d8d5c4d46bad33f19ef43241, type: 3}
+    - {fileID: 2800000, guid: c49e04c999707214d8d0380634c0df39, type: 3}
+    - {fileID: 2800000, guid: 2781c7b3e0b88c043a139897fda2381d, type: 3}
+    - {fileID: 2800000, guid: 8275a84dd1ba1cc449d4561f9c76c743, type: 3}
+    - {fileID: 2800000, guid: 50cc51eee15595a44ac8d5aff22949e4, type: 3}
+    - {fileID: 2800000, guid: 920d2eff720d6074786027c2a1ad1dcc, type: 3}
+    - {fileID: 2800000, guid: d4657d4b4711a624dae936fd2e0799b7, type: 3}
+    - {fileID: 2800000, guid: 4898b101a724d4a48b5971dcddfb7049, type: 3}
+    - {fileID: 2800000, guid: 5f2efb711b86cc84f9f146860b4cfcfc, type: 3}
+    - {fileID: 2800000, guid: c62e1324ff5309443872241a6dcbbadc, type: 3}
+    - {fileID: 2800000, guid: 70b5040f1211df94698bc208846407d2, type: 3}
+    - {fileID: 2800000, guid: 94beaa577c765a1409caab9b9e1f227c, type: 3}
+    - {fileID: 2800000, guid: 40c3f54f64251a2429750de69741ed2a, type: 3}
+    - {fileID: 2800000, guid: e985f35814239304283ed063e0c7603a, type: 3}
+    - {fileID: 2800000, guid: 15a6f1cd41158dd43a92835cea720b3a, type: 3}
+    - {fileID: 2800000, guid: 4fa4c4e075a0cda449f1eaf64c2553dd, type: 3}
+    - {fileID: 2800000, guid: a0ab910bbd8fd9546a40518431c25c98, type: 3}
+    - {fileID: 2800000, guid: 8cc48a4f2bd73e0498d20e0d85d9bf25, type: 3}
+    - {fileID: 2800000, guid: 90a5d68b387bead4fb90525d105eadba, type: 3}
+    - {fileID: 2800000, guid: fa61753780e56e742a04f934cd2567bb, type: 3}
+    - {fileID: 2800000, guid: e5a3e3c11e62ed54189ecd0cf643d2ee, type: 3}
+    - {fileID: 2800000, guid: 8cd40f1818648b94199e69e7cb94bfe0, type: 3}
+    - {fileID: 2800000, guid: de44bab859b14be49a575d4088876b9d, type: 3}
+    - {fileID: 2800000, guid: 8657f4d19b85a9347a145c9d1a806713, type: 3}
+    - {fileID: 2800000, guid: b748cb26a891b0f41a21e0f876881eb1, type: 3}
+    - {fileID: 2800000, guid: cc1af95f1d33b5942b5019c5f48c8234, type: 3}
+    - {fileID: 2800000, guid: 5669a0becdd97ec4ca08f4d6b0d4d447, type: 3}
+    - {fileID: 2800000, guid: 1a4b6e30addedda479ded46005e9fd7d, type: 3}
+    - {fileID: 2800000, guid: 866dfe5da23ba8e4385dfdfe429d89c7, type: 3}
+    - {fileID: 2800000, guid: 27da34553346e7d4d90f38f36326c974, type: 3}
+    - {fileID: 2800000, guid: 23704209e16a41340a1a68986b536008, type: 3}
+    - {fileID: 2800000, guid: fdaddc53be457544da4ca3f8a8eaee98, type: 3}
+    - {fileID: 2800000, guid: b6f4c00926d949c489446b424fe2847e, type: 3}
+    - {fileID: 2800000, guid: 4c71307ff2d210f4687d2574a3a217a4, type: 3}
+    - {fileID: 2800000, guid: 14c9c19429b359c4d9042372a80c53c6, type: 3}
+    - {fileID: 2800000, guid: d04fccae12515b349baca21619e1ba0a, type: 3}
+    - {fileID: 2800000, guid: ee74b2acc4aac564d9942ba13bfcc4a0, type: 3}
+    - {fileID: 2800000, guid: 13489939df210b94997464ebd6d82539, type: 3}
+    - {fileID: 2800000, guid: 743a2db0f13701f45a40fdf98ca3ae48, type: 3}
+    - {fileID: 2800000, guid: b52f8effcb3b6594a93635874bb79fea, type: 3}
+    - {fileID: 2800000, guid: b683598a9cc5ebe4a87bfa3cfad1bada, type: 3}
+    - {fileID: 2800000, guid: 1b43c0dc9db524142a4576bb88849d5c, type: 3}
+    - {fileID: 2800000, guid: 8869b1d3b68c81c45939e75d1fbcd942, type: 3}
+    - {fileID: 2800000, guid: fc8587c3d1d9d9642bd6db6554e490a8, type: 3}
+    - {fileID: 2800000, guid: 0454e203009e9714aaf38ce3f322f48b, type: 3}
+    - {fileID: 2800000, guid: d3c0e0872eacaf64cbdec9c81d3baab3, type: 3}
+    - {fileID: 2800000, guid: 4195eadfbb0080b4489be224468899d2, type: 3}
+    - {fileID: 2800000, guid: 49a9db96a518928469d08808bfa2129c, type: 3}
+    - {fileID: 2800000, guid: 47096fe3dcb40c34d921c006c9c0730e, type: 3}
+    - {fileID: 2800000, guid: 1db638b7f3bdb794e9fd8762326333c5, type: 3}
   - name: Orion
     collectable: 1
     eulerAngles: {x: -62.393, y: -0.82, z: 0.211}

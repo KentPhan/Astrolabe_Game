@@ -51,9 +51,9 @@ public class ConstellationManager : MonoBehaviour
     {
         //Debug.Log(display.rotation.x - currentFocus.transform.rotation.x);
         //Debug.Log(Mathf.Abs(display.rotation.x - currentFocus.transform.rotation.x));
-        if (Mathf.Abs(constrainEulerAngle(display.eulerAngles.x) - constrainEulerAngle(currentFocus.transform.eulerAngles.x)) < 2f &&
-            Mathf.Abs(constrainEulerAngle(display.eulerAngles.y) - constrainEulerAngle(currentFocus.transform.eulerAngles.y)) < 2f &&
-            Mathf.Abs(constrainEulerAngle(display.eulerAngles.z) - constrainEulerAngle(currentFocus.transform.eulerAngles.z)) < 2f)
+        if (Mathf.Abs(constrainEulerAngle(display.eulerAngles.x) - constrainEulerAngle(currentFocus.transform.eulerAngles.x)) < 5f &&
+            Mathf.Abs(constrainEulerAngle(display.eulerAngles.y) - constrainEulerAngle(currentFocus.transform.eulerAngles.y)) < 5f &&
+            Mathf.Abs(constrainEulerAngle(display.eulerAngles.z) - constrainEulerAngle(currentFocus.transform.eulerAngles.z)) < 5f)
             return true;
         return false;
     }
@@ -77,14 +77,16 @@ public class ConstellationManager : MonoBehaviour
             constellationDisplayItem.FinishedMaterial = constellationItemList[i].finishedMaterial;
             constellationDisplayItem.CongratulationMaterial = constellationItemList[i].congratulationMaterial;
 
-            if (constellationItemList[i].animation.Length > 0) {
+            if (constellationItemList[i].animation.Length > 0)
+            {
                 constellationDisplayItem.hasAnimation = true;
                 constellationDisplayItem.isAnimated = false;
                 constellationDisplayItem.textures =
                     constellationItemList[i].animation;
-            } else
+            }
+            else
                 constellationDisplayItem.hasAnimation = false;
-            
+
             // set display material
             Debug.Log(constellationItemList[i].displayInMap.transform.
                 GetComponentInChildren<Renderer>().materials.Length);

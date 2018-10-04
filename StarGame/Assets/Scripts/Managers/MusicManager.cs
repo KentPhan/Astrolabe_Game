@@ -90,7 +90,7 @@ public class MusicManager : MonoBehaviour
             case "button_click": PlaySound(buttonClickSound); break;
             case "success": PlaySound(successSound); break;
         }
-    } 
+    }
 
     bool lessThanDistance(Constellation display, GameObject currentFocus, float distance)
     {
@@ -104,9 +104,9 @@ public class MusicManager : MonoBehaviour
 
     public void UpdateFindingDistanceMusic(Constellation display, GameObject currentFocus)
     {
-        float distanceA = 30f;
-        float distanceB = 15f;
-        float distanceC = 5f;
+        float distanceA = 40f;
+        float distanceB = 20f;
+        float distanceC = 10f;
         AudioSource beat = findMusicCollection.GetComponent<AudioSource>();
         if (lessThanDistance(display, currentFocus, distanceA))
         {

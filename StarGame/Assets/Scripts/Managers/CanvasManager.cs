@@ -154,7 +154,7 @@ public class CanvasManager : MonoBehaviour
 
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         PlayerEntity currentPlayer = GameManager.Instance.player;
 
@@ -188,11 +188,13 @@ public class CanvasManager : MonoBehaviour
         }
 
 
+
+
         // For displaying constellation screen
         if (constellationMatchItemId >= 0 && constellationMatchScreenPanel.activeInHierarchy)
         {
-            Vector3 newRotation = new Vector3(currentPlayer.transform.eulerAngles.x, GameManager.Instance.player.transform.eulerAngles.y, GameManager.Instance.player.transform.eulerAngles.z);
-            constellationMatchScreenPanel.transform.rotation = Quaternion.Euler(newRotation);
+            constellationMatchScreenPanel.transform.rotation = Quaternion.LookRotation(currentPlayer.transform.forward, currentPlayer.transform.up);
+
             MusicManager.Instance.UpdateFindingDistanceMusic(ConstellationMatch, constellationMatchScreenPanel);
             if (ConstellationManager.IsMatchConstellation(ConstellationMatch, constellationMatchScreenPanel))
             {
@@ -204,7 +206,7 @@ public class CanvasManager : MonoBehaviour
             {
                 ConstellationManager.Instance.constellationItemList[constellationMatchItemId].displayInMap.GetComponent<ConstellationDisplayItem>().isAnimated = false;
             }
-        } 
+        }
     }
 
 }

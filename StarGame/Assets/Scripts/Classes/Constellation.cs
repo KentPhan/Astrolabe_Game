@@ -13,7 +13,10 @@ public class Constellation
     public Material displayMaterial;
     public Material congratulationMaterial;
     public Material finishedMaterial;
+    public Sprite UIConstellationTitle;
+
     public GameObject displayInMap;
+
     public Texture[] animation;
 
 }

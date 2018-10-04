@@ -981,6 +981,8 @@ MonoBehaviour:
   lookUpBlinkDelay: 1
   lookUpBlinkPortionUnvisible: 0.262
   constellationMatchScreenPanel: {fileID: 0}
+  UIUnknownConstellationTitle: {fileID: 21300000, guid: 86b04303e3970b74788c9714f9c247ac,
+    type: 3}
   ConstellationMatch:
     name: 
     collectable: 0
@@ -992,6 +994,7 @@ MonoBehaviour:
     displayMaterial: {fileID: 0}
     congratulationMaterial: {fileID: 0}
     finishedMaterial: {fileID: 0}
+    UIConstellationTitle: {fileID: 0}
     displayInMap: {fileID: 0}
     animation: []
 --- !u!114 &114475457221223306

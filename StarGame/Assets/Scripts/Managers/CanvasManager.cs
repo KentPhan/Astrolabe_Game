@@ -38,6 +38,10 @@ public class CanvasManager : MonoBehaviour
     public GameObject constellationMatchScreenPanel; // Very different. A sphere that sits outside in world space and rotates to display constellations
 
 
+    // Placeholder Images
+    public Sprite UIUnknownConstellationTitle;
+
+
     // matching constellation
     public Constellation ConstellationMatch;
     private bool isAnimationOfConstellationMatch;

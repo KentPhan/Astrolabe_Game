@@ -7,7 +7,13 @@ public class ConstellationsScrollViewButton : MonoBehaviour
     public Button constellationButton;
     public Text descriptionLabel;
     public Text collectableLabel;
+    [Header("Constellation Title Image")]
+    public Image constellationTitleImage;
+    public float titleWidth;
+    public float titleHeight;
+    [Header("Scene References")]
     public Image constellationImage;
+
     int id;
     // Use this for initialization
     Constellation source;
@@ -34,17 +40,31 @@ public class ConstellationsScrollViewButton : MonoBehaviour
         menuManager = _menuManager;
 
         constellationImage.sprite = source.icon;
+
+
+
+
+
         if (source.collectable == 1)
         {
             descriptionLabel.text = "????";
             collectableLabel.text = "Available";
+            constellationTitleImage.sprite = CanvasManager.Instance.UIUnknownConstellationTitle;
+            constellationTitleImage.GetComponent<RectTransform>().sizeDelta = new Vector2(CanvasManager.Instance.UIUnknownConstellationTitle.rect.width, CanvasManager.Instance.UIUnknownConstellationTitle.rect.height);
         }
 
         else
         {
             descriptionLabel.text = source.name;
             collectableLabel.text = "Unavailable";
+            constellationTitleImage.sprite = source.UIConstellationTitle;
+            constellationTitleImage.GetComponent<RectTransform>().sizeDelta = new Vector2(source.UIConstellationTitle.rect.width, source.UIConstellationTitle.rect.height);
         }
+
+
+        // Size constellation title images properly
+
+        constellationTitleImage.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
 
 
     }

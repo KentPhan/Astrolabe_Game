@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     private GameState _currentState = GameState.Start;
     private ObjectPool _currentPool;
     public GameObject poolObject;
-    public PlayerEntity player;
+    private PlayerEntity player;
 
     private GameManager()
     {
@@ -61,6 +61,13 @@ public class GameManager : MonoBehaviour
 
     }
 
+
+    public void GoToStart()
+    {
+        MusicManager.Instance.ChangeChannel("start");
+        CanvasManager.Instance.ShowStart();
+        _currentState = GameState.Start;
+    }
 
     /// <summary>
     /// Goes to free roam.
@@ -94,6 +101,16 @@ public class GameManager : MonoBehaviour
     public GameState GetCurrentState()
     {
         return _currentState;
+    }
+
+    public PlayerEntity GetPlayer()
+    {
+        if (player == null)
+        {
+            player = GameObject.FindWithTag("Player").GetComponent<PlayerEntity>();
+        }
+
+        return player;
     }
 
 

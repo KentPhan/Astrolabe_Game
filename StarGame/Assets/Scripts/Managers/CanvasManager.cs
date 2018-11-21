@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CanvasManager : MonoBehaviour
@@ -25,6 +26,7 @@ public class CanvasManager : MonoBehaviour
     public Button startGameButton;
     public Button openConsellationMenuButton;
     public Button closeConstellationMenuButton;
+    public Button resetGameButton;
 
     [Header("Panels")]
     public GameObject startPanel;
@@ -93,8 +95,27 @@ public class CanvasManager : MonoBehaviour
             GameManager.Instance.GoToFreeRoam();
             MusicManager.Instance.PlaySoundEffect("button_click");
         });
+        resetGameButton.onClick.AddListener(() =>
+        {
+            // The most hacky ass way to reset the game
+            GameManager.Instance.GoToStart();
+            Destroy(CanvasManager.Instance.gameObject);
+            Destroy(ConstellationManager.Instance.gameObject);
+            Destroy(MusicManager.Instance.gameObject);
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
+        });
     }
 
+    public void ShowStart()
+    {
+        // Deactivate other panels
+        collectionMenuPanel.SetActive(false);
+        freeRoamPanel.SetActive(false);
+
+        // Show active panel
+        startPanel.SetActive(true);
+    }
 
     public void ShowFreeRoam()
     {
@@ -168,7 +189,7 @@ public class CanvasManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        PlayerEntity currentPlayer = GameManager.Instance.player;
+        PlayerEntity currentPlayer = GameManager.Instance.GetPlayer();
 
         // For displaying lookup
         // If facing down
@@ -210,13 +231,14 @@ public class CanvasManager : MonoBehaviour
             MusicManager.Instance.UpdateFindingDistanceMusic(ConstellationMatch, constellationMatchScreenPanel);
             if (ConstellationManager.IsMatchConstellation(ConstellationMatch, constellationMatchScreenPanel))
             {
-                
+
                 if (ConstellationManager.Instance.constellationItemList[constellationMatchItemId].displayInMap.GetComponent<ConstellationDisplayItem>().hasAnimation)
                 {
                     ConstellationManager.Instance.constellationItemList[constellationMatchItemId].displayInMap.GetComponent<ConstellationDisplayItem>().isAnimated = true;
                     if (ConstellationManager.Instance.constellationItemList[constellationMatchItemId].displayInMap.GetComponent<ConstellationDisplayItem>().isCongratulation)
                         matchConstellation();
-                } else
+                }
+                else
                 {
                     matchConstellation();
                 }
